@@ -26,6 +26,7 @@ const Hero = () => {
               style="secondary"
               size="sm"
               rounded="full"
+              action={() => alert("Button clicked!")}
             />
           </div>
         }

@@ -2,9 +2,9 @@ import clsx from "clsx";
 
 export interface CardProps {
   children: React.ReactNode;
-  cardStyle?: "primary" | "light" | "grey" | "ghost" | "outline";
+  cardStyle?: "primary" | "light" | "secondary" | "ghost" | "outline" | "dark";
   align?: string;
-  cardSize?: "none" | "sm" | "base" | "md" | "lg";
+  cardSize?: "none" | "sm" | "base" | "md" | "lg" | "huge";
   width?: string;
   height?: string;
   action?: () => void;
@@ -29,10 +29,11 @@ export function Card(props: CardProps) {
 
   const cardStyles = {
     primary: "bg-primary text-white",
-    light: "bg-white",
-    grey: "bg-gray-500",
+    light: "bg-light",
+    secondary: "bg-secondary",
     ghost: "bg-transparent",
     outline: "border border-gray-300",
+    dark: "bg-dark-video"
   };
 
   const corners = {
@@ -51,7 +52,8 @@ export function Card(props: CardProps) {
     sm: "p-4",
     base: "p-6",
     md: "p-8",
-    lg: "p-12",
+    lg: "p-20",
+    huge: "p-24"
   };
 
   const classNames = className

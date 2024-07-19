@@ -3,32 +3,37 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 
+import videoFile from "../../src/assets/video/logo-animation.mp4";
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
+
 const Homepage = () => {
   return (
     <div className="p-4">
       {/* HERO */}
       <Hero />
 
-      {/* SECTION 1 */}
+      {/* SECTION 1 - TRANSPARENT */}
       <Card
         cardSize="lg"
         cardStyle="ghost"
         rounded="xxl"
         width="w-full"
-        className="flex"
+        className="flex mt-10"
         children={
-          <div className="mt-10 max-w-[1440px] flex flex-col gap-8">
+          <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
             <h2 className="text-[46px] font-bold text-gray-900">
               Where surveys transcend the mundane!
             </h2>
 
-            <div className="flex gap-4">
+            <div className="flex gap-7">
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
+                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
                     <h4 className="text-[24px] font-semibold">
                       Swipe, Tap, Done
                     </h4>
@@ -41,11 +46,12 @@ const Homepage = () => {
                 }
               />
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
+                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
                     <h4 className="text-[24px] font-semibold">
                       Chat Your Answers
                     </h4>
@@ -58,11 +64,12 @@ const Homepage = () => {
                 }
               />
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
+                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
                     <h4 className="text-[24px] font-semibold">
                       Explore and Enjoy
                     </h4>
@@ -79,27 +86,27 @@ const Homepage = () => {
         }
       />
 
-      {/* SECTION 2 */}
+      {/* SECTION 2 - PURPLE */}
       <Card
         cardSize="lg"
         cardStyle="primary"
         rounded="xxl"
         width="w-full"
-        className="flex"
+        className="flex mt-10"
         children={
-          <div className="mt-10 max-w-[1440px] flex flex-col gap-8">
+          <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
             <h2 className="text-[46px] font-bold text-white">
               Enjoy every survey moment
             </h2>
 
             <div className="flex gap-6">
-              <p>Image 1</p>
-              <p>Image 2</p>
+              <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
+              <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-7">
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
@@ -115,7 +122,7 @@ const Homepage = () => {
                 }
               />
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
@@ -131,7 +138,7 @@ const Homepage = () => {
                 }
               />
               <Card
-                cardSize="sm"
+                cardSize="none"
                 cardStyle="ghost"
                 className="flex flex-col gap-4 items-start"
                 children={
@@ -150,6 +157,255 @@ const Homepage = () => {
           </div>
         }
       />
+
+      {/* SECTION 3 - LIGHT */}
+      <Card
+        cardSize="lg"
+        cardStyle="light"
+        rounded="xxl"
+        width="w-full"
+        className="flex mt-4"
+        children={
+          <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
+            <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl"></div>
+            <div className="flex flex-col gap-10 flex-1">
+              <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                Turn research into a fun game!
+              </h2>
+
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 1</p>
+                </div>
+
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 2</p>
+                </div>
+
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 3</p>
+                </div>
+              </div>
+
+              <Button
+                text="Send us a message"
+                style="primary"
+                size="sm"
+                rounded="full"
+                className="self-start"
+                action={() => alert("Button clicked!")}
+              />
+            </div>
+          </div>
+        }
+      />
+
+      {/* SECTION 4 - YELLOW */}
+      <Card
+        cardSize="lg"
+        cardStyle="secondary"
+        rounded="xxl"
+        width="w-full"
+        className="flex mt-4"
+        children={
+          <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
+            <div className="flex flex-col gap-10 flex-1">
+              <div className="flex flex-col gap-6">
+                <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                  Score awesome rewards with Rexee
+                </h2>
+                <p className="text-gray-700">
+                  Earn Amazon vouchers and 3D models by participating in
+                  surveys, turning your insights into valuable rewards.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 1</p>
+                </div>
+
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 2</p>
+                </div>
+
+                <div className="flex gap-4">
+                  <p>Icon</p>
+                  <p>Point 3</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl"></div>
+          </div>
+        }
+      />
+
+      {/* SECTION 5 - VIDEO */}
+      <Card
+        cardSize="lg"
+        cardStyle="dark"
+        rounded="xxl"
+        width="w-full"
+        className="flex mt-4"
+        children={
+          <div className="w-full max-w-[1224px] mx-auto">
+            <video autoPlay loop muted className="rounded-3xl">
+              <source src={videoFile} type="video/mp4" />
+            </video>
+          </div>
+        }
+      />
+
+      {/* SECTION 6 - TEAM */}
+      <Card
+        cardSize="lg"
+        cardStyle="ghost"
+        rounded="xxl"
+        width="w-full"
+        className="flex mt-10"
+        children={
+          <div className="w-full max-w-[1224px] flex flex-col gap-[52px] mx-auto">
+            <h2 className="text-[46px] font-bold text-gray-900">
+              Say hello to our team!
+            </h2>
+
+            <div className="flex flex-col gap-8 w-full items-center">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">Ennio Armato</p>
+                        <p>CEO</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">
+                          Riccardo Tumminello
+                        </p>
+                        <p>Head of Marketing</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">
+                          Alessandro Imborgia
+                        </p>
+                        <p>Head of Sales</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">Mario Ramic</p>
+                        <p>Head of R&D</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">Anna Trifirò</p>
+                        <p>Product & Communication Manager</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">Emily Saccaro</p>
+                        <p>Brand Manager</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">Marko Franjic</p>
+                        <p>Technology Manager</p>
+                      </div>
+                    </div>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  children={
+                    <div className="flex flex-col gap-2 items-start w-full">
+                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
+                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
+                        <p className="text-[20px] font-medium">
+                          Manuel Matosevic
+                        </p>
+                        <p>Backend Developer</p>
+                      </div>
+                    </div>
+                  }
+                />
+              </div>
+
+              <Button
+                text="Visit our website"
+                style="secondary"
+                size="sm"
+                rounded="full"
+                action={() => alert("Button clicked!")}
+              />
+            </div>
+          </div>
+        }
+      />
+
+      {/* SECTION 7 - BANNER */}
+      <Card cardSize="none" cardStyle="ghost" children={<Banner />} />
+
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 };
