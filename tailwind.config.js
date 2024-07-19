@@ -15,9 +15,13 @@ module.exports = {
         'gray':"#DEDDE9",
         'dark-video':"#222317",
         "dark":"#030E09"
-      }
+      },
+      fontFamily: {
+        'EasyGrotesk': ['EasyGrotesk', 'sans-serif']
+      },
     },
   },
+  
   plugins: [],
 }
 

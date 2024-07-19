@@ -11,10 +11,10 @@ const Hero = () => {
         width="w-full"
         height="h-[95vh]"
         align="text-center"
-        className="flex justify-center"
+        className="flex justify-center "
         children={
           <div className="flex items-center justify-center align-center flex-col gap-12 max-w-[68%]">
-            <h1 className="text-[72px] font-semibold leading-[72px]">
+            <h1 className="text-[72px] font-bold font-EasyGrotesk leading-[72px]">
               Discover, share and win with Rexee's fun surveys
             </h1>
             <p className="text-[20px] text-white">
