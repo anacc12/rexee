@@ -1,30 +1,3 @@
-@font-face {
-  font-family: 'EasyGrotesk';
-  src: local('EasyGrotesk'), url(./assets/fonts/Easy-Grotesk-Regular.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'EasyGrotesk';
-  font-weight: 600;
-  src: local('EasyGrotesk'), url(./assets/fonts/Easy-Grotesk-Medium.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'EasyGrotesk';
-    font-weight: 800;
-    src: local('EasyGrotesk'), url(./assets/fonts/Easy-Grotesk-Bold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'EasyGrotesk';
-    font-weight: 900;
-    src: local('EasyGrotesk'), url(./assets/fonts/Easy-Grotesk-ExtraBold.ttf) format('truetype');
-}
-
-body {
-  font-family: 'EasyGrotesk', sans-serif;
-}
-
 .App {
   text-align: center;
 }
@@ -54,8 +27,6 @@ body {
 .App-link {
   color: #61dafb;
 }
-
-
 
 @keyframes App-logo-spin {
   from {

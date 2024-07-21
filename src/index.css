@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "EasyGrotesk";
+    src: url("./assets/fonts/EasyGrotesk/Easy-Grotesk-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "EasyGrotesk";
+    font-weight: 600;
+    src: url("./assets/fonts/EasyGrotesk/Easy-Grotesk-Medium.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "EasyGrotesk";
+    font-weight: 700;
+    src: url("./assets/fonts/EasyGrotesk/Easy-Grotesk-Bold.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "EasyGrotesk";
+    font-weight: 800;
+    src: url("./assets/fonts/EasyGrotesk/Easy-Grotesk-ExtraBold.ttf") format("truetype");
+  }
+
+  @layer base {
+    body {
+      @apply font-easyGrotesk;
+    }
+  }

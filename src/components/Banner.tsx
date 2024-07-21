@@ -22,7 +22,7 @@ export function Banner(props: BannerProps) {
         children={
           <div className="w-full relative">
             <div className="flex flex-col gap-10 max-w-[45%]">
-              <h2 className="text-[46px] leading-[52px] font-bold">
+              <h2 className="text-[46px] leading-[52px] font-easyGrotesk">
                 Ready to turn market research into a fun adventure?
               </h2>
               <Button

@@ -17,7 +17,7 @@ module.exports = {
         "dark":"#030E09"
       },
       fontFamily: {
-        'EasyGrotesk': ['EasyGrotesk', 'sans-serif']
+        easyGrotesk: ["EasyGrotesk", "sans-serif"],
       },
     },
   },
