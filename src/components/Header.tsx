@@ -18,7 +18,7 @@ export function Header(props: HeaderProps) {
       <img
         src={logo}
         alt="Rexee Logo"
-        className="h-[40px] w-auto"
+        className="h-[50px] w-auto"
       />
       <div className="flex gap-6 items-center">
         <Link to={`/`} className="text-[16px] text-grey-900 font-semibold">
