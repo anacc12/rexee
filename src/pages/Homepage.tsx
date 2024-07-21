@@ -8,13 +8,21 @@ import Point from "../components/Point";
 import { Check } from "react-feather";
 
 // ASSETS
-
 import videoFile from "../../src/assets/video/logo-animation.mp4";
-
 import flashYellow from "../../src/assets/svg/flash-yellow.svg";
 import flashYellowLight from "../../src/assets/svg/flash-yellow-light.svg";
 import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 
+// IMAGES
+import selectCountry from "../../src/assets/img/select-country.png";
+import voiceQuestion from "../../src/assets/img/voice-question.png";
+import reward from "../../src/assets/img/reward.png";
+import login from "../../src/assets/img/login.png";
+import voucher from "../../src/assets/img/voucher.png";
+import loginInputs from "../../src/assets/img/login-inputs.png";
+import dashboard from "../../src/assets/img/dashboard.png";
+
+// ICONS
 import blingYellow from "../../src/assets/img/bling-yellow.png";
 import celebrate from "../../src/assets/img/celebrate.png";
 import gift from "../../src/assets/img/gift.png";
@@ -54,7 +62,13 @@ const Homepage = () => {
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
-                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
+                    <div className="flex justify-center items-center w-full h-[324px] bg-light rounded-3xl p-6">
+                      <img
+                        src={selectCountry}
+                        alt="Select Language and Country showcase"
+                        className="w-full h-full rounded-2xl object-cover"
+                      />
+                    </div>
                     <h4 className="text-[24px] font-semibold">
                       Swipe, Tap, Done
                     </h4>
@@ -72,7 +86,13 @@ const Homepage = () => {
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
-                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
+                    <div className="flex justify-center items-center p-6 w-full h-[324px] bg-light rounded-3xl">
+                      <img
+                        src={voiceQuestion}
+                        alt="Voice Question showcase"
+                        className="w-full h-full rounded-2xl object-cover"
+                      />
+                    </div>
                     <h4 className="text-[24px] font-semibold">
                       Chat Your Answers
                     </h4>
@@ -90,7 +110,13 @@ const Homepage = () => {
                 className="flex flex-col gap-4 items-start"
                 children={
                   <>
-                    <div className="w-full h-[324px] bg-light rounded-3xl"></div>
+                    <div className="flex justify-center items-center p-6 w-full h-[324px] bg-light rounded-3xl">
+                      <img
+                        src={reward}
+                        alt="Completed survey reward showcase"
+                        className="w-full h-full rounded-2xl object-cover"
+                      />
+                    </div>
                     <h4 className="text-[24px] font-semibold">
                       Explore and Enjoy
                     </h4>
@@ -139,8 +165,40 @@ const Homepage = () => {
               </div>
 
               <div className="flex gap-6">
-                <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
-                <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
+                <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
+                  <div className="grid grid-cols-2 grid-rows-2 gap-5 w-full h-full">
+                    <div className="col-span-1 row-span-2 h-full">
+                      <img
+                        src={login}
+                        alt="Login showcase"
+                        className="w-full h-full rounded-2xl object-cover"
+                      />
+                    </div>
+
+                    <div className="col-span-1 row-span-1 h-full">
+                      <img
+                        src={voucher}
+                        alt="Voucher showcase"
+                        className="w-full h-full rounded-xl object-cover"
+                      />
+                    </div>
+
+                    <div className="col-span-1 row-span-1 h-full">
+                      <img
+                        src={loginInputs}
+                        alt="Login elements showcase"
+                        className="w-full h-full rounded-xl object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
+                  <img
+                    src={dashboard}
+                    alt="Login showcase"
+                    className="flex flex-1 w-full h-full rounded-2xl "
+                  />
+                </div>
               </div>
 
               <div className="flex gap-7">
