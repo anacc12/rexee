@@ -6,6 +6,7 @@ import Button from "../components/Button";
 
 import flashWhite from "../../src/assets/svg/flash-white.svg";
 import rexee from "../../src/assets/svg/rexee-face.svg";
+import { ArrowRight } from "react-feather";
 
 const Hero = () => {
   return (
@@ -51,6 +52,7 @@ const Hero = () => {
               size="base"
               rounded="full"
               action={() => alert("Button clicked!")}
+              icon={<ArrowRight size={20} color="#111827" />}
             />
           </div>
           </>

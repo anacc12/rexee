@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Point from "../components/Point";
-import { Check } from "react-feather";
+import { ArrowRight, Check } from "react-feather";
 
 // ASSETS
 import videoFile from "../../src/assets/video/logo-animation.mp4";
@@ -21,12 +21,24 @@ import login from "../../src/assets/img/login.png";
 import voucher from "../../src/assets/img/voucher.png";
 import loginInputs from "../../src/assets/img/login-inputs.png";
 import dashboard from "../../src/assets/img/dashboard.png";
+import leaderboard from "../../src/assets/img/leaderboard.png";
+
+// TEAM
+import mario from "../../src/assets/img/team/mario.png";
+import anna from "../../src/assets/img/team/anna.png";
+import riccardo from "../../src/assets/img/team/riccardo.png";
+import ennio from "../../src/assets/img/team/ennio.png";
+import alessandro from "../../src/assets/img/team/alessandro.png";
+import emily from "../../src/assets/img/team/emily.png";
+import marko from "../../src/assets/img/team/marko.png";
+import manuel from "../../src/assets/img/team/manuel.png";
 
 // ICONS
 import blingYellow from "../../src/assets/img/bling-yellow.png";
 import celebrate from "../../src/assets/img/celebrate.png";
 import gift from "../../src/assets/img/gift.png";
 import wave from "../../src/assets/img/wave.png";
+import TeamAvatar from "../components/TeamAvatar";
 
 const Homepage = () => {
   return (
@@ -265,7 +277,13 @@ const Homepage = () => {
         className="flex mt-4 max-w-[1400px] mx-auto"
         children={
           <div className="w-full max-w-[1224px] flex gap-[100px] mx-auto items-center">
-            <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl"></div>
+            <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl p-[44px]">
+              <img
+                src={leaderboard}
+                alt="Leaderboard showcase"
+                className="w-full h-full rounded-2xl object-cover"
+              />
+            </div>
             <div className="flex flex-col gap-10 flex-1">
               <div className="flex flex-col gap-4 items-start">
                 <img
@@ -309,6 +327,7 @@ const Homepage = () => {
                 size="base"
                 rounded="full"
                 className="self-start"
+                icon={<ArrowRight size={20} color="#fff" />}
                 action={() => alert("Button clicked!")}
               />
             </div>
@@ -375,7 +394,13 @@ const Homepage = () => {
                 </div>
               </div>
 
-              <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl"></div>
+              <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl p-[44px]">
+                <img
+                  src={voucher}
+                  alt="Voucher showcase"
+                  className="w-full h-full rounded-2xl object-cover"
+                />
+              </div>
             </div>
           </>
         }
@@ -415,125 +440,53 @@ const Homepage = () => {
 
             <div className="flex flex-col gap-8 w-full items-center">
               <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Ennio Armato
-                        </p>
-                        <p>CEO</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={ennio}
+                  alt="Ennio Armato - CEO"
+                  name="Ennio Armato"
+                  role="CEO"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Riccardo Tumminello
-                        </p>
-                        <p className="text-sm">Head of Marketing</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={riccardo}
+                  alt="Riccardo Tumminello - Head of Marketing"
+                  name="Riccardo Tumminello"
+                  role="Head of Marketing"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Alessandro Imborgia
-                        </p>
-                        <p className="text-sm">Head of Sales</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={alessandro}
+                  alt="Alessandro Imborgia - Head of Sales"
+                  name="Alessandro Imborgia"
+                  role="Head of Sales"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">Mario Ramic</p>
-                        <p className="text-sm">Head of R&D</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={mario}
+                  alt="Mario Ramic - Head of R&D"
+                  name="Mario Ramic"
+                  role="Head of R&D"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Anna Trifirò
-                        </p>
-                        <p className="text-sm">
-                          Product & Communication Manager
-                        </p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={anna}
+                  alt="Anna Trifirò - Product & Communication Manager"
+                  name="Anna Trifirò"
+                  role="Product & Communication Manager"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Emily Saccaro
-                        </p>
-                        <p className="text-sm">Brand Manager</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={emily}
+                  alt="Emily Saccaro - Brand Manager"
+                  name="Emily Saccaro"
+                  role="Brand Manager"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Marko Franjic
-                        </p>
-                        <p className="text-sm">Technology Manager</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={marko}
+                  alt="Marko Franjic - Technology Manager"
+                  name="Marko Franjic"
+                  role="Technology Manager"
                 />
-                <Card
-                  cardSize="none"
-                  cardStyle="ghost"
-                  children={
-                    <div className="flex flex-col gap-2 items-start w-full">
-                      <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
-                      <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-semibold">
-                          Manuel Matosevic
-                        </p>
-                        <p className="text-sm">Backend Developer</p>
-                      </div>
-                    </div>
-                  }
+                <TeamAvatar
+                  src={manuel}
+                  alt="Manuel Matosevic - Backend Developer"
+                  name="Manuel Matosevic"
+                  role="Backend Developer"
                 />
               </div>
 
@@ -542,6 +495,7 @@ const Homepage = () => {
                 style="secondary"
                 size="base"
                 rounded="full"
+                icon={<ArrowRight size={20} color="#111827" />}
                 action={() => alert("Button clicked!")}
               />
             </div>

@@ -3,6 +3,7 @@ import Card from "./Card";
 import Button from "./Button";
 
 import flashes from "../../src/assets/svg/flashes-yellow.svg";
+import { ArrowRight } from "react-feather";
 
 export interface BannerProps {}
 
@@ -31,6 +32,7 @@ export function Banner(props: BannerProps) {
                 size="base"
                 rounded="full"
                 className="self-start"
+                icon={<ArrowRight size={20} color="#111827" />}
                 action={() => alert("Button clicked!")}
               />
             </div>

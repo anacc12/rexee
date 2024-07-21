@@ -15,11 +15,11 @@ export function Button(props: ButtonProps) {
   const { text, width, style, size, action, className, rounded, icon } = props;
 
   const styles = {
-    primary: "bg-primary !text-white",
-    secondary: "bg-secondary !text-gray-900 hover:bg-secondary-dark",
-    ghost: "bg-transparent",
+    primary: "bg-primary font-semibold !text-white transition-colors hover:bg-primary-dark",
+    secondary: "bg-secondary font-semibold transition-colors hover:bg-secondary-dark",
+    ghost: "bg-transparent font-semibold",
     outline: "border border-gray-300",
-    dark: "bg-dark text-white"
+    dark: "bg-dark text-white font-semibold"
   };
 
   const corners = {
@@ -49,13 +49,14 @@ export function Button(props: ButtonProps) {
   return (
     <button
       className={clsx(
-        "inline-flex items-center justify-center font-semibold",
+        "inline-flex items-center justify-center",
         style && styles[style],
         size && sizes[size],
         rounded && corners[rounded],
         width,
         className
       )}
+      style={style=="secondary" ? { color: 'rgba(55, 65, 81)' } : {}}
       onClick={action}
     >
       {text}
