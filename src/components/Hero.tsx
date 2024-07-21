@@ -7,7 +7,7 @@ const Hero = () => {
       <Card
         cardSize="lg"
         cardStyle="primary"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         height="h-[95vh]"
         align="text-center"
