@@ -149,7 +149,7 @@ const Homepage = () => {
       <Card
         cardSize="lg"
         cardStyle="primary"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         className="flex mt-10 relative overflow-hidden  max-w-[1400px] mx-auto"
         children={
@@ -272,7 +272,7 @@ const Homepage = () => {
       <Card
         cardSize="lg"
         cardStyle="light"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         className="flex mt-4 max-w-[1400px] mx-auto"
         children={
@@ -339,7 +339,7 @@ const Homepage = () => {
       <Card
         cardSize="lg"
         cardStyle="secondary"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         className="flex mt-4 relative overflow-hidden max-w-[1400px] mx-auto"
         children={
@@ -410,7 +410,7 @@ const Homepage = () => {
       <Card
         cardSize="lg"
         cardStyle="dark"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         className="flex mt-4 max-w-[1400px] mx-auto"
         children={
@@ -426,7 +426,7 @@ const Homepage = () => {
       <Card
         cardSize="lg"
         cardStyle="ghost"
-        rounded="xxl"
+        rounded="xxxl"
         width="w-full"
         className="flex mt-10"
         children={
