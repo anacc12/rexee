@@ -2,16 +2,23 @@ import React from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
+import Point from "../components/Point";
+import { Check } from "react-feather";
+
+// ASSETS
 
 import videoFile from "../../src/assets/video/logo-animation.mp4";
+
 import flashYellow from "../../src/assets/svg/flash-yellow.svg";
+import flashYellowLight from "../../src/assets/svg/flash-yellow-light.svg";
+import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
+
 import blingYellow from "../../src/assets/img/bling-yellow.png";
 import celebrate from "../../src/assets/img/celebrate.png";
 import gift from "../../src/assets/img/gift.png";
 import wave from "../../src/assets/img/wave.png";
-
-import Banner from "../components/Banner";
-import Footer from "../components/Footer";
 
 const Homepage = () => {
   return (
@@ -106,76 +113,88 @@ const Homepage = () => {
         cardStyle="primary"
         rounded="xxl"
         width="w-full"
-        className="flex mt-10"
+        className="flex mt-10 relative overflow-hidden"
         children={
-          <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <div className="flex gap-4 items-center">
-              <img
-                src={blingYellow}
-                alt="Flash Icon Yellow"
-                className="h-[52px] w-auto"
-              />
-              <h2 className="text-[46px] font-bold text-white">
-                Enjoy every survey moment
-              </h2>
-            </div>
+          <>
+            <img
+              src={flashPrimaryDark}
+              alt="Flashes Icon"
+              className="h-[200%] w-auto absolute z-10"
+              style={{
+                top: "-45%",
+                right: "-1%",
+              }}
+            />
 
-            <div className="flex gap-6">
-              <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
-              <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
-            </div>
+            <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto z-20">
+              <div className="flex gap-4 items-center">
+                <img
+                  src={blingYellow}
+                  alt="Flash Icon Yellow"
+                  className="h-[52px] w-auto"
+                />
+                <h2 className="text-[46px] font-bold text-white">
+                  Enjoy every survey moment
+                </h2>
+              </div>
 
-            <div className="flex gap-7">
-              <Card
-                cardSize="none"
-                cardStyle="ghost"
-                className="flex flex-col gap-4 items-start"
-                children={
-                  <>
-                    <h4 className="text-[24px] font-semibold">
-                      See surveys come to life
-                    </h4>
-                    <p>
-                      Interact with data spatially and gain deeper insights
-                      through visual exploration.
-                    </p>
-                  </>
-                }
-              />
-              <Card
-                cardSize="none"
-                cardStyle="ghost"
-                className="flex flex-col gap-4 items-start"
-                children={
-                  <>
-                    <h4 className="text-[24px] font-semibold">
-                      Level up and earn points
-                    </h4>
-                    <p>
-                      Earn experience points and level up as you engage and gain
-                      rewards along the way.
-                    </p>
-                  </>
-                }
-              />
-              <Card
-                cardSize="none"
-                cardStyle="ghost"
-                className="flex flex-col gap-4 items-start"
-                children={
-                  <>
-                    <h4 className="text-[24px] font-semibold">
-                      Personalize your space
-                    </h4>
-                    <p>
-                      Obtain a variety of 3D models to personalize and furnish
-                      your virtual environment.
-                    </p>
-                  </>
-                }
-              />
+              <div className="flex gap-6">
+                <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
+                <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
+              </div>
+
+              <div className="flex gap-7">
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  className="flex flex-col gap-4 items-start"
+                  children={
+                    <>
+                      <h4 className="text-[24px] font-semibold">
+                        See surveys come to life
+                      </h4>
+                      <p>
+                        Interact with data spatially and gain deeper insights
+                        through visual exploration.
+                      </p>
+                    </>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  className="flex flex-col gap-4 items-start"
+                  children={
+                    <>
+                      <h4 className="text-[24px] font-semibold">
+                        Level up and earn points
+                      </h4>
+                      <p>
+                        Earn experience points and level up as you engage and
+                        gain rewards along the way.
+                      </p>
+                    </>
+                  }
+                />
+                <Card
+                  cardSize="none"
+                  cardStyle="ghost"
+                  className="flex flex-col gap-4 items-start"
+                  children={
+                    <>
+                      <h4 className="text-[24px] font-semibold">
+                        Personalize your space
+                      </h4>
+                      <p>
+                        Obtain a variety of 3D models to personalize and furnish
+                        your virtual environment.
+                      </p>
+                    </>
+                  }
+                />
+              </div>
             </div>
-          </div>
+          </>
         }
       />
 
@@ -187,10 +206,10 @@ const Homepage = () => {
         width="w-full"
         className="flex mt-4"
         children={
-          <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
+          <div className="w-full max-w-[1224px] flex gap-[100px] mx-auto items-center">
             <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl"></div>
             <div className="flex flex-col gap-10 flex-1">
-              <div className="flex flex-col gap-2 items-start">
+              <div className="flex flex-col gap-4 items-start">
                 <img
                   src={celebrate}
                   alt="Celebrate Icon"
@@ -204,20 +223,26 @@ const Homepage = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 1</p>
-                </div>
-
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 2</p>
-                </div>
-
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 3</p>
-                </div>
+                <Point
+                  icon={<Check size={12} color="#fff" />}
+                  text={"Unlock new features and rewards with each level"}
+                  style="dark"
+                  size="sm"
+                />
+                <Point
+                  icon={<Check size={12} color="#fff" />}
+                  text={
+                    "Earn experience points and level up as you participate"
+                  }
+                  style="dark"
+                  size="sm"
+                />
+                <Point
+                  icon={<Check size={12} color="#fff" />}
+                  text={"Enhance your virtual environment"}
+                  style="dark"
+                  size="sm"
+                />
               </div>
 
               <Button
@@ -239,43 +264,62 @@ const Homepage = () => {
         cardStyle="secondary"
         rounded="xxl"
         width="w-full"
-        className="flex mt-4"
+        className="flex mt-4 relative overflow-hidden"
         children={
-          <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
-            <div className="flex flex-col gap-10 flex-1">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2 items-start">
-                  <img src={gift} alt="Gift Icon" className="h-[52px] w-auto" />
-                  <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
-                    Score awesome rewards with Rexee
-                  </h2>
+          <>
+            <img
+              src={flashYellowLight}
+              alt="Flashes Icon"
+              className="h-[140%] w-auto absolute inset-x-0 z-10 opacity-50"
+              style={{
+                top: "-20%",
+                left: "-3%",
+              }}
+            />
+            <div className="w-full max-w-[1224px] flex gap-[130px] mx-auto items-center z-20">
+              <div className="flex flex-col gap-10 flex-1">
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-4 items-start">
+                    <img
+                      src={gift}
+                      alt="Gift Icon"
+                      className="h-[52px] w-auto"
+                    />
+                    <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                      Score awesome rewards with Rexee
+                    </h2>
+                  </div>
+                  <p className="text-gray-700">
+                    Earn Amazon vouchers and 3D models by participating in
+                    surveys, turning your insights into valuable rewards.
+                  </p>
                 </div>
-                <p className="text-gray-700">
-                  Earn Amazon vouchers and 3D models by participating in
-                  surveys, turning your insights into valuable rewards.
-                </p>
+
+                <div className="flex flex-col gap-2">
+                  <Point
+                    icon={<Check size={12} color="#fff" />}
+                    text={"Get paid for answering surveys"}
+                    style="dark"
+                    size="sm"
+                  />
+                  <Point
+                    icon={<Check size={12} color="#fff" />}
+                    text={"Cash out your Rexee points"}
+                    style="dark"
+                    size="sm"
+                  />
+                  <Point
+                    icon={<Check size={12} color="#fff" />}
+                    text={"Unlock 3D models to enhance your virtual space"}
+                    style="dark"
+                    size="sm"
+                  />
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 1</p>
-                </div>
-
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 2</p>
-                </div>
-
-                <div className="flex gap-4">
-                  <p>Icon</p>
-                  <p>Point 3</p>
-                </div>
-              </div>
+              <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl"></div>
             </div>
-
-            <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl"></div>
-          </div>
+          </>
         }
       />
 
@@ -304,7 +348,7 @@ const Homepage = () => {
         className="flex mt-10"
         children={
           <div className="w-full max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <div className="flex flex-col gap-2 items-start">
+            <div className="flex flex-col gap-4 items-start">
               <img src={wave} alt="Wave Icon" className="h-[52px] w-auto" />
               <h2 className="text-[46px] font-bold text-gray-900">
                 Say <span className="text-primary">hello</span> to our team!
