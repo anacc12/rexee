@@ -18,7 +18,7 @@ export function Footer(props: FooterProps) {
       <div className="w-full flex flex-1 justify-between max-w-[1224px] mx-auto">
         <div className="flex flex-col gap-4">
           <img src={logo} alt="Logo" className="w-[192px] h-auto" />
-          <p className="text-[22px] font-medium">Enjoy every survey moment!</p>
+          <p className="text-[22px] font-semibold">Enjoy every survey moment!</p>
 
           <div className="flex gap-1 items-center">
             <Mail color="#8A8AA1" size="18" />
@@ -26,16 +26,16 @@ export function Footer(props: FooterProps) {
           </div>
         </div>
         <div className="flex flex-col gap-4 items-end">
-          <Link to={`/`} className="text-[16px] text-grey-900 font-medium">
+          <Link to={`/`} className="text-[16px] text-grey-900 font-semibold">
             Home
           </Link>
           <Link
             to={`/contact`}
-            className="text-[16px] text-grey-900 font-medium"
+            className="text-[16px] text-grey-900 font-semibold"
           >
             Contact
           </Link>
-          <Link to={`/`} className="text-[16px] text-grey-900 font-medium">
+          <Link to={`/`} className="text-[16px] text-grey-900 font-semibold">
             <Instagram size={20} color="#111827" />
           </Link>
         </div>
@@ -45,7 +45,7 @@ export function Footer(props: FooterProps) {
 
       <div className="w-full flex flex-1 justify-between items-start max-w-[1224px] mx-auto">
         <div className="flex flex-col gap-4">
-          <p className="text-[22px] font-medium">Visit us at FFIND</p>
+          <p className="text-[22px] font-semibold">Visit us at FFIND</p>
           <div className="flex gap-1 items-center">
             <MapPin size="18" color="#8A8AA1" />
             <p>

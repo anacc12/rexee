@@ -34,7 +34,7 @@ export function Button(props: ButtonProps) {
   const sizes = {
     none: "p-0",
     sm: "px-4 py-2",
-    base: "px-6 py-3",
+    base: "px-4 py-3",
     md: "px-8 py-4", 
     lg: "px-12 py-6",
   };
@@ -49,7 +49,7 @@ export function Button(props: ButtonProps) {
   return (
     <button
       className={clsx(
-        "inline-flex items-center justify-center",
+        "inline-flex items-center justify-center font-semibold",
         style && styles[style],
         size && sizes[size],
         rounded && corners[rounded],

@@ -4,6 +4,12 @@ import Button from "../components/Button";
 import Hero from "../components/Hero";
 
 import videoFile from "../../src/assets/video/logo-animation.mp4";
+import flashYellow from "../../src/assets/svg/flash-yellow.svg";
+import blingYellow from "../../src/assets/img/bling-yellow.png";
+import celebrate from "../../src/assets/img/celebrate.png";
+import gift from "../../src/assets/img/gift.png";
+import wave from "../../src/assets/img/wave.png";
+
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 
@@ -22,9 +28,17 @@ const Homepage = () => {
         className="flex mt-10"
         children={
           <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <h2 className="text-[46px] font-bold text-gray-900">
-              Where surveys transcend the mundane!
-            </h2>
+            <div className="flex gap-4 items-center">
+              <h2 className="text-[46px] font-bold text-gray-900">
+                Where surveys <span className="text-primary">transcend</span>{" "}
+                the mundane!
+              </h2>
+              <img
+                src={flashYellow}
+                alt="Flash Icon Yellow"
+                className="h-[56px] w-auto"
+              />
+            </div>
 
             <div className="flex gap-7">
               <Card
@@ -95,9 +109,16 @@ const Homepage = () => {
         className="flex mt-10"
         children={
           <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <h2 className="text-[46px] font-bold text-white">
-              Enjoy every survey moment
-            </h2>
+            <div className="flex gap-4 items-center">
+              <img
+                src={blingYellow}
+                alt="Flash Icon Yellow"
+                className="h-[52px] w-auto"
+              />
+              <h2 className="text-[46px] font-bold text-white">
+                Enjoy every survey moment
+              </h2>
+            </div>
 
             <div className="flex gap-6">
               <div className="bg-primary-light rounded-3xl w-full h-[364px]"></div>
@@ -169,9 +190,18 @@ const Homepage = () => {
           <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
             <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl"></div>
             <div className="flex flex-col gap-10 flex-1">
-              <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
-                Turn research into a fun game!
-              </h2>
+              <div className="flex flex-col gap-2 items-start">
+                <img
+                  src={celebrate}
+                  alt="Celebrate Icon"
+                  className="h-[52px] w-auto"
+                />
+
+                <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                  Turn research into a{" "}
+                  <span className="text-primary">fun game!</span>
+                </h2>
+              </div>
 
               <div className="flex flex-col gap-2">
                 <div className="flex gap-4">
@@ -193,7 +223,7 @@ const Homepage = () => {
               <Button
                 text="Send us a message"
                 style="primary"
-                size="sm"
+                size="base"
                 rounded="full"
                 className="self-start"
                 action={() => alert("Button clicked!")}
@@ -214,9 +244,12 @@ const Homepage = () => {
           <div className="w-full max-w-[1224px] flex gap-[52px] mx-auto items-center">
             <div className="flex flex-col gap-10 flex-1">
               <div className="flex flex-col gap-6">
-                <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
-                  Score awesome rewards with Rexee
-                </h2>
+                <div className="flex flex-col gap-2 items-start">
+                  <img src={gift} alt="Gift Icon" className="h-[52px] w-auto" />
+                  <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                    Score awesome rewards with Rexee
+                  </h2>
+                </div>
                 <p className="text-gray-700">
                   Earn Amazon vouchers and 3D models by participating in
                   surveys, turning your insights into valuable rewards.
@@ -271,12 +304,15 @@ const Homepage = () => {
         className="flex mt-10"
         children={
           <div className="w-full max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <h2 className="text-[46px] font-bold text-gray-900">
-              Say hello to our team!
-            </h2>
+            <div className="flex flex-col gap-2 items-start">
+              <img src={wave} alt="Wave Icon" className="h-[52px] w-auto" />
+              <h2 className="text-[46px] font-bold text-gray-900">
+                Say <span className="text-primary">hello</span> to our team!
+              </h2>
+            </div>
 
             <div className="flex flex-col gap-8 w-full items-center">
-              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
@@ -284,7 +320,9 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">Ennio Armato</p>
+                        <p className="text-[20px] font-semibold">
+                          Ennio Armato
+                        </p>
                         <p>CEO</p>
                       </div>
                     </div>
@@ -297,10 +335,10 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">
+                        <p className="text-[20px] font-semibold">
                           Riccardo Tumminello
                         </p>
-                        <p>Head of Marketing</p>
+                        <p className="text-sm">Head of Marketing</p>
                       </div>
                     </div>
                   }
@@ -312,10 +350,10 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">
+                        <p className="text-[20px] font-semibold">
                           Alessandro Imborgia
                         </p>
-                        <p>Head of Sales</p>
+                        <p className="text-sm">Head of Sales</p>
                       </div>
                     </div>
                   }
@@ -327,8 +365,8 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">Mario Ramic</p>
-                        <p>Head of R&D</p>
+                        <p className="text-[20px] font-semibold">Mario Ramic</p>
+                        <p className="text-sm">Head of R&D</p>
                       </div>
                     </div>
                   }
@@ -340,8 +378,12 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">Anna Trifirò</p>
-                        <p>Product & Communication Manager</p>
+                        <p className="text-[20px] font-semibold">
+                          Anna Trifirò
+                        </p>
+                        <p className="text-sm">
+                          Product & Communication Manager
+                        </p>
                       </div>
                     </div>
                   }
@@ -353,8 +395,10 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">Emily Saccaro</p>
-                        <p>Brand Manager</p>
+                        <p className="text-[20px] font-semibold">
+                          Emily Saccaro
+                        </p>
+                        <p className="text-sm">Brand Manager</p>
                       </div>
                     </div>
                   }
@@ -366,8 +410,10 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">Marko Franjic</p>
-                        <p>Technology Manager</p>
+                        <p className="text-[20px] font-semibold">
+                          Marko Franjic
+                        </p>
+                        <p className="text-sm">Technology Manager</p>
                       </div>
                     </div>
                   }
@@ -379,10 +425,10 @@ const Homepage = () => {
                     <div className="flex flex-col gap-2 items-start w-full">
                       <div className="w-full h-[290px] rounded-3xl bg-gray-light"></div>
                       <div className="flex flex-col gap-2 p-4 bg-light rounded-2xl w-full">
-                        <p className="text-[20px] font-medium">
+                        <p className="text-[20px] font-semibold">
                           Manuel Matosevic
                         </p>
-                        <p>Backend Developer</p>
+                        <p className="text-sm">Backend Developer</p>
                       </div>
                     </div>
                   }
@@ -392,7 +438,7 @@ const Homepage = () => {
               <Button
                 text="Visit our website"
                 style="secondary"
-                size="sm"
+                size="base"
                 rounded="full"
                 action={() => alert("Button clicked!")}
               />

@@ -24,7 +24,7 @@ const Hero = () => {
             <Button
               text="Get in touch with us"
               style="secondary"
-              size="sm"
+              size="base"
               rounded="full"
               action={() => alert("Button clicked!")}
             />
