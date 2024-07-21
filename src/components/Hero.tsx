@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import flashWhite from "../../src/assets/svg/flash-white.svg";
 import rexee from "../../src/assets/svg/rexee-face.svg";
 import { ArrowRight } from "react-feather";
+import Header from "./Header";
 
 const Hero = () => {
   return (
@@ -17,9 +18,10 @@ const Hero = () => {
         width="w-full"
         height="h-[95vh]"
         align="text-center"
-        className="flex justify-center relative overflow-hidden max-w-[1400px] mx-auto"
+        className="flex justify-center relative overflow-hidden max-w-[1400px] mx-auto p-4"
         children={
           <>
+          <Header />
           <img
               src={flashWhite}
               alt="Flashes Icon"
