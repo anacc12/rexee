@@ -113,7 +113,7 @@ const Homepage = () => {
         cardStyle="primary"
         rounded="xxl"
         width="w-full"
-        className="flex mt-10 relative overflow-hidden"
+        className="flex mt-10 relative overflow-hidden  max-w-[1400px] mx-auto"
         children={
           <>
             <img
@@ -204,7 +204,7 @@ const Homepage = () => {
         cardStyle="light"
         rounded="xxl"
         width="w-full"
-        className="flex mt-4"
+        className="flex mt-4 max-w-[1400px] mx-auto"
         children={
           <div className="w-full max-w-[1224px] flex gap-[100px] mx-auto items-center">
             <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl"></div>
@@ -264,7 +264,7 @@ const Homepage = () => {
         cardStyle="secondary"
         rounded="xxl"
         width="w-full"
-        className="flex mt-4 relative overflow-hidden"
+        className="flex mt-4 relative overflow-hidden max-w-[1400px] mx-auto"
         children={
           <>
             <img
@@ -329,7 +329,7 @@ const Homepage = () => {
         cardStyle="dark"
         rounded="xxl"
         width="w-full"
-        className="flex mt-4"
+        className="flex mt-4 max-w-[1400px] mx-auto"
         children={
           <div className="w-full max-w-[1224px] mx-auto">
             <video autoPlay loop muted className="rounded-3xl">
