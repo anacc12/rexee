@@ -13,25 +13,7 @@ import flashYellow from "../../src/assets/svg/flash-yellow.svg";
 import flashYellowLight from "../../src/assets/svg/flash-yellow-light.svg";
 import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 
-// IMAGES
-import selectCountry from "../../src/assets/img/select-country.png";
-import voiceQuestion from "../../src/assets/img/voice-question.png";
-import reward from "../../src/assets/img/reward.png";
-import login from "../../src/assets/img/login.png";
-import voucher from "../../src/assets/img/voucher.png";
-import loginInputs from "../../src/assets/img/login-inputs.png";
-import dashboard from "../../src/assets/img/dashboard.png";
-import leaderboard from "../../src/assets/img/leaderboard.png";
-
-// TEAM
-import mario from "../../src/assets/img/team/mario.png";
-import anna from "../../src/assets/img/team/anna.png";
-import riccardo from "../../src/assets/img/team/riccardo.png";
-import ennio from "../../src/assets/img/team/ennio.png";
-import alessandro from "../../src/assets/img/team/alessandro.png";
-import emily from "../../src/assets/img/team/emily.png";
-import marko from "../../src/assets/img/team/marko.png";
-import manuel from "../../src/assets/img/team/manuel.png";
+import Image from "../assets/img/images";
 
 // ICONS
 import blingYellow from "../../src/assets/img/bling-yellow.png";
@@ -39,8 +21,33 @@ import celebrate from "../../src/assets/img/celebrate.png";
 import gift from "../../src/assets/img/gift.png";
 import wave from "../../src/assets/img/wave.png";
 import TeamAvatar from "../components/TeamAvatar";
+import LazyVideo from "../components/LazyVideo";
+import LazyImage from "../components/LazyImage";
 
 const Homepage = () => {
+  const teamMembers = [
+    { name: "Ennio Armato", role: "CEO", img: Image.Ennio },
+    {
+      name: "Riccardo Tumminello",
+      role: "Head of Marketing",
+      img: Image.Riccardo,
+    },
+    {
+      name: "Alessandro Imborgia",
+      role: "Head of Sales",
+      img: Image.Alessandro,
+    },
+    { name: "Mario Ramic", role: "Head of R&D", img: Image.Mario },
+    {
+      name: "Anna Trifirò",
+      role: "Product & Communication Manager",
+      img: Image.Anna,
+    },
+    { name: "Emily Saccaro", role: "Brand Manager", img: Image.Emily },
+    { name: "Marko Franjic", role: "Technology Manager", img: Image.Marko },
+    { name: "Manuel Matosevic", role: "Backend Developer", img: Image.Manuel },
+  ];
+
   return (
     <div className="p-4 pb-0">
       {/* HERO */}
@@ -75,8 +82,9 @@ const Homepage = () => {
                 children={
                   <>
                     <div className="flex justify-center items-center w-full h-[324px] bg-light rounded-3xl p-6">
-                      <img
-                        src={selectCountry}
+                    
+                      <LazyImage
+                        src={Image.SelectCountry}
                         alt="Select Language and Country showcase"
                         className="w-full h-full rounded-2xl object-cover"
                       />
@@ -99,8 +107,9 @@ const Homepage = () => {
                 children={
                   <>
                     <div className="flex justify-center items-center p-6 w-full h-[324px] bg-light rounded-3xl">
-                      <img
-                        src={voiceQuestion}
+                     
+                      <LazyImage
+                        src={Image.VoiceQuestion}
                         alt="Voice Question showcase"
                         className="w-full h-full rounded-2xl object-cover"
                       />
@@ -123,10 +132,11 @@ const Homepage = () => {
                 children={
                   <>
                     <div className="flex justify-center items-center p-6 w-full h-[324px] bg-light rounded-3xl">
-                      <img
-                        src={reward}
-                        alt="Completed survey reward showcase"
-                        className="w-full h-full rounded-2xl object-cover"
+                      
+                      <LazyImage
+                         src={Image.Reward}
+                         alt="Completed survey reward showcase"
+                         className="w-full h-full rounded-2xl object-cover"
                       />
                     </div>
                     <h4 className="text-[24px] font-semibold">
@@ -180,8 +190,9 @@ const Homepage = () => {
                 <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
                   <div className="grid grid-cols-2 grid-rows-2 gap-5 w-full h-full">
                     <div className="col-span-1 row-span-2 h-full">
-                      <img
-                        src={login}
+                      
+                      <LazyImage
+                        src={Image.Login}
                         alt="Login showcase"
                         className="w-full h-full rounded-2xl object-cover"
                       />
@@ -189,15 +200,16 @@ const Homepage = () => {
 
                     <div className="col-span-1 row-span-1 h-full">
                       <img
-                        src={voucher}
+                        src={Image.Voucher}
                         alt="Voucher showcase"
                         className="w-full h-full rounded-xl object-cover"
                       />
                     </div>
 
                     <div className="col-span-1 row-span-1 h-full">
-                      <img
-                        src={loginInputs}
+                     
+                      <LazyImage
+                        src={Image.LoginInputs}
                         alt="Login elements showcase"
                         className="w-full h-full rounded-xl object-cover"
                       />
@@ -205,8 +217,8 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
-                  <img
-                    src={dashboard}
+                  <LazyImage
+                    src={Image.Dashboard}
                     alt="Login showcase"
                     className="flex flex-1 w-full h-full rounded-2xl "
                   />
@@ -278,8 +290,8 @@ const Homepage = () => {
         children={
           <div className="w-full max-w-[1224px] flex gap-[100px] mx-auto items-center">
             <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl p-[44px]">
-              <img
-                src={leaderboard}
+              <LazyImage
+                src={Image.Leaderboard}
                 alt="Leaderboard showcase"
                 className="w-full h-full rounded-2xl object-cover"
               />
@@ -395,8 +407,8 @@ const Homepage = () => {
               </div>
 
               <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl p-[44px]">
-                <img
-                  src={voucher}
+                <LazyImage
+                  src={Image.Voucher}
                   alt="Voucher showcase"
                   className="w-full h-full rounded-2xl object-cover"
                 />
@@ -415,9 +427,7 @@ const Homepage = () => {
         className="flex mt-4 max-w-[1400px] mx-auto"
         children={
           <div className="w-full max-w-[1224px] mx-auto">
-            <video autoPlay loop muted className="rounded-3xl">
-              <source src={videoFile} type="video/mp4" />
-            </video>
+            <LazyVideo src={videoFile} className="rounded-3xl" />
           </div>
         }
       />
@@ -440,54 +450,15 @@ const Homepage = () => {
 
             <div className="flex flex-col gap-8 w-full items-center">
               <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
-                <TeamAvatar
-                  src={ennio}
-                  alt="Ennio Armato - CEO"
-                  name="Ennio Armato"
-                  role="CEO"
-                />
-                <TeamAvatar
-                  src={riccardo}
-                  alt="Riccardo Tumminello - Head of Marketing"
-                  name="Riccardo Tumminello"
-                  role="Head of Marketing"
-                />
-                <TeamAvatar
-                  src={alessandro}
-                  alt="Alessandro Imborgia - Head of Sales"
-                  name="Alessandro Imborgia"
-                  role="Head of Sales"
-                />
-                <TeamAvatar
-                  src={mario}
-                  alt="Mario Ramic - Head of R&D"
-                  name="Mario Ramic"
-                  role="Head of R&D"
-                />
-                <TeamAvatar
-                  src={anna}
-                  alt="Anna Trifirò - Product & Communication Manager"
-                  name="Anna Trifirò"
-                  role="Product & Communication Manager"
-                />
-                <TeamAvatar
-                  src={emily}
-                  alt="Emily Saccaro - Brand Manager"
-                  name="Emily Saccaro"
-                  role="Brand Manager"
-                />
-                <TeamAvatar
-                  src={marko}
-                  alt="Marko Franjic - Technology Manager"
-                  name="Marko Franjic"
-                  role="Technology Manager"
-                />
-                <TeamAvatar
-                  src={manuel}
-                  alt="Manuel Matosevic - Backend Developer"
-                  name="Manuel Matosevic"
-                  role="Backend Developer"
-                />
+                {teamMembers.map((member) => (
+                  <TeamAvatar
+                    key={member.name}
+                    src={member.img}
+                    alt={`${member.name} - ${member.role}`}
+                    name={member.name}
+                    role={member.role}
+                  />
+                ))}
               </div>
 
               <Button
