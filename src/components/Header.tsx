@@ -24,12 +24,15 @@ export function Header(props: HeaderProps) {
         <Link to={`/`} className="text-[16px] text-grey-900 font-semibold">
           Home
         </Link>
+        <Link to={`/contact`} className="text-[16px] text-grey-900 font-semibold">
+          Contact us
+        </Link>
         <Link
-          to='/contact'
+          to='/login'
           className="text-[16px] px-4 py-2 bg-white rounded-full font-semibold"
           style={{ color: 'rgba(55, 65, 81)' }}
         >
-          Contact us
+          Log in
         </Link>
       </div>
     </div>
