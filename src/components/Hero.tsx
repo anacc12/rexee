@@ -21,7 +21,7 @@ const Hero = () => {
         className="flex justify-center relative overflow-hidden max-w-[1400px] mx-auto p-4"
         children={
           <>
-          <Header />
+          <Header type="light"/>
           <img
               src={flashWhite}
               alt="Flashes Icon"

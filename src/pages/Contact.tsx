@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <>
       <div className="w-screen h-[60vh] bg-primary text-white flex flex-col gap-10 justify-center items-center relative overflow-hidden">
-        <Header />
+        <Header type="light"/>
         <img
           src={flashPrimaryDark}
           alt="Flash Purple"

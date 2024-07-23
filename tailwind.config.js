@@ -16,7 +16,8 @@ module.exports = {
         'gray-light' : "#E4E3F5",
         'gray':"#DEDDE9",
         'dark-video':"#222317",
-        "dark":"#030E09"
+        "dark":"#030E09",
+        "transparent" : "",
       },
       fontFamily: {
         easyGrotesk: ["EasyGrotesk", "sans-serif"],
