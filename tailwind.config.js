@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'extra-light' : "#F5F5FF",
         'primary-light' : "#6A1ED4",
         'primary':'#5F00BA',
         'primary-dark':'#3A0070',
@@ -15,6 +16,7 @@ module.exports = {
         'light':"#F0F0F7",
         'gray-light' : "#E4E3F5",
         'gray':"#DEDDE9",
+        'gray-dark':"#645C6E",
         'dark-video':"#222317",
         "dark":"#030E09",
         "transparent" : "",
