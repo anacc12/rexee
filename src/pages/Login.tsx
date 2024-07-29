@@ -66,10 +66,13 @@ const Login = () => {
         className="max-w-[500px] -mt-[45px] mx-auto z-20 flex flex-col items-center"
       >
         <h4 className="text-[24px] font-bold mb-3">Welcome!</h4>
-        <p className="text-[16px] !text-gray-dark text-center mb-6">
-          Please enter your email and password to log in to your account.
+        <p className="text-[15px] !text-gray-dark text-center">
+          Please enter your email and password to log in.
         </p>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+
+        <hr className="border-t-1 border-gray-light w-full my-6" />
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+          <p className="text-[12px] font-semibold text-dark mb-2">Email *</p>
           <input
             type="text"
             id="email"
@@ -78,8 +81,11 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-3 border border-gray-light rounded-lg bg-[#fff] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className={`w-full text-[14px] p-3 mb-4 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              email ? "bg-extra-light border-primary" : "bg-white"
+            }`}
           />
+          <p className="text-[12px] font-semibold text-dark mb-2">Password *</p>
           <input
             type="password"
             id="password"
@@ -88,10 +94,10 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-3 border border-gray-light rounded-lg bg-[#fff] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className={`w-full text-[14px] mb-8 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              password ? "bg-extra-light border-primary" : "bg-white"
+            }`}
           />
-          <hr className="border-t-1 border-gray-light w-full !mt-6 !mb-3" />
-
           <button
             type="submit"
             className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
