@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Login from "./pages/Login";
+import UserDashboard from "./pages/UserDashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="/login" element={<Login />} />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/dashboard" element={<UserDashboard />} />
     </Routes>
   </Router>
 );

@@ -47,7 +47,7 @@ const Login = () => {
           expireTime: response.expireTime,
         });
         await authStore.setUser();
-        navigate("/contact");
+        navigate("/dashboard");
       }
     } catch (err: any) {
       let msg = "Wrong credentials.";
