@@ -9,6 +9,8 @@ import {
 
 import { ServiceBase } from "../../data/service";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 
 type AuthResponse = {
   token: string;
@@ -19,20 +21,21 @@ type AuthResponse = {
   expireTime: string;
 };
 
-const axiosInstance = axios.create({
-  baseURL: "https://dummyjson.com",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+// const axiosInstance = axios.create({
+//   baseURL: "http://93.63.175.216:8000/api/v1/prod",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
 
 class AuthService extends ServiceBase {
   getLoggerName(): string {
     return "AuthService";
   }
 
-  login = async (data: { username: string; password: string }) => {
-    const response = await axiosInstance.post("/auth/login", data);
+  login = async (data: { email: string; password: string }) => {
+    //axiosinstance.post()
+    const response = await this.http.post("/auth/login/", data);
     return response.data;
   };
 
@@ -40,10 +43,17 @@ class AuthService extends ServiceBase {
     return await this.http.get(`/auth/email-validation?email=${email}`);
   }
 
-  async getUser(): Promise<IAuthenticatedUser> {
-    const res = await this.http.get(`/user/me`);
+  // async getUser(): Promise<IAuthenticatedUser> {
+  //   const res = await this.http.get(`/user/me`);
 
-    return res.data;
+  //   return res.data;
+  // }
+
+  async getUser(): Promise<IAuthenticatedUser> {
+    const token = Cookies.get("token");
+    const parsedToken = JSON.parse(token || "{}");
+    const decodedToken = jwtDecode<IAuthenticatedUser>(parsedToken.token);
+    return decodedToken;
   }
 
   async forgotPassword(email: string): Promise<IdentityResponse> {

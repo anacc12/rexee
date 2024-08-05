@@ -10,6 +10,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Login from "./pages/Login";
 import UserDashboard from "./pages/UserDashboard";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/dashboard" element={<UserDashboard />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
     </Routes>
   </Router>
 );

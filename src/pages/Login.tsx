@@ -9,10 +9,12 @@ import { AxiosError } from "axios";
 import logo from "../../src/assets/svg/logo-white.svg";
 import authService from "../auth/services/authService";
 import { authStore } from "../auth";
+import { jwtDecode } from "jwt-decode";
+import { Link } from "react-router-dom";
 
 type LoginForm = {
-  email?: string;
-  username: string;
+  email: string;
+  // username: string;
   password: string;
   rememberMe?: boolean;
 };
@@ -26,25 +28,26 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginForm>();
 
-  //   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginForm> = async (data) => {
     try {
       const response = await authService.login({
-        username: data.username,
+        email: data.email,
         password: data.password,
       });
 
-    //   console.log(response);
+      console.log(response);
+
       //   if (response.status === "Authenticated") {
-      if (response.token) {
+      if (response.status == 200) {
         authStore.setToken({
-          token: response.token,
-          refreshToken: response.refreshToken,
-          expireTime: response.expireTime,
+          token: response.data.access,
+          refreshToken: response.data.refresh,
+          expireTime: response.data.expireTime,
         });
         await authStore.setUser();
         navigate("/dashboard");
@@ -93,18 +96,18 @@ const Login = () => {
 
         <hr className="border-t-1 border-gray-light w-full my-6" />
         <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-          <p className="text-[12px] font-semibold text-dark mb-2">Username *</p>
+          <p className="text-[12px] font-semibold text-dark mb-2">Email *</p>
           <input
             type="text"
-            id="username"
-            // name="username"
-            placeholder="Enter your username"
-            // value={username}
-            // onChange={(e) => setUsername(e.target.value)}
-            {...register("username", { required: true })}
+            id="email"
+            // name="email"
+            placeholder="Enter your email"
+            // value={email}
+            // onChange={(e) => setemail(e.target.value)}
+            {...register("email", { required: true })}
             required
             className={`w-full text-[14px] p-3 mb-4 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              username ? "bg-extra-light border-primary" : "bg-white"
+              email ? "bg-extra-light border-primary" : "bg-white"
             }`}
           />
           <p className="text-[12px] font-semibold text-dark mb-2">Password *</p>
@@ -118,12 +121,20 @@ const Login = () => {
               password ? "bg-extra-light border-primary" : "bg-white"
             }`}
           />
-          <button
-            type="submit"
-            className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
-          >
-            Sign in
-          </button>
+          <div className="flex flex-col gap-4 items-center">
+            <button
+              type="submit"
+              className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+            >
+              Sign in
+            </button>
+            <Link
+              to={`/forgot-password`}
+              className="text-primary text-sm border-b border-primary"
+            >
+              Forgot password?
+            </Link>
+          </div>
         </form>
       </Card>
     </div>

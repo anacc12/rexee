@@ -1,7 +1,8 @@
 import { AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
 
-import { IToken, tokenFlowService, authService } from '../../auth';
+import { IToken, tokenFlowService, authService, IAuthenticatedUser } from '../../auth';
+import { jwtDecode } from 'jwt-decode';
 
 class AuthStore {
     refreshSubscribers: any = [];
@@ -43,14 +44,30 @@ class AuthStore {
         Cookies.set('token', JSON.stringify(token));
     }
 
+    // async setUser() {
+    //     try {
+    //         const userData = await authService.getUser();
+    //         Cookies.set('user', JSON.stringify(userData));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
+
     async setUser() {
         try {
-            const userData = await authService.getUser();
-            Cookies.set('user', JSON.stringify(userData));
-        } catch (err) {
+            const token = Cookies.get('token');
+            const parsedToken = JSON.parse(token || '{}');
+            const decodedUser = jwtDecode<IAuthenticatedUser>(parsedToken.token);
+            Cookies.set('user', JSON.stringify(decodedUser));
+          } catch (err) {
             console.log(err);
-        }
-    }
+          }
+      }
+    
+      async getUser(): Promise<IAuthenticatedUser | null> {
+        const user = Cookies.get('user');
+        return user ? JSON.parse(user) : null;
+      }
 
     async dispatchTokenEvent() {
         this.isDispatched = true;

@@ -1,10 +1,8 @@
 export interface IAuthenticatedUser {
-  active: boolean;
-  firstName: string;
-  lastName: string;
-  id: string;
+  first_name: string;
+  last_name: string;
+  user_id: string;
   email: string;
-  userName: string;
-  phoneNumber: string;
+  gender: string;
   country: string;
 }
