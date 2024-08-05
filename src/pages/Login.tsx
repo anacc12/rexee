@@ -43,11 +43,11 @@ const Login = () => {
       console.log(response);
 
       //   if (response.status === "Authenticated") {
-      if (response.status == 200) {
+      if (response.access) {
         authStore.setToken({
-          token: response.data.access,
-          refreshToken: response.data.refresh,
-          expireTime: response.data.expireTime,
+          token: response.access,
+          refreshToken: response.refresh,
+          expireTime: response.expireTime,
         });
         await authStore.setUser();
         navigate("/dashboard");

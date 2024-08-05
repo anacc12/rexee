@@ -15,6 +15,7 @@ module.exports = {
         'secondary-darker': "#E0AF3D",
         'light':"#F0F0F7",
         'gray-light' : "#E4E3F5",
+        'gray-cool' : "#888DA7",
         'gray':"#DEDDE9",
         'gray-dark':"#645C6E",
         'dark-video':"#222317",
