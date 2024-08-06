@@ -57,10 +57,10 @@ class AuthService extends ServiceBase {
     return decodedToken;
   }
 
-   getUserSurveys = async () => {
+   getUserSurveys = async (completed: boolean) => {
     const token = Cookies.get('token');
     const parsedToken = JSON.parse(token || '{}');
-    const response = await this.http.get('/surveys/', {
+    const response = await this.http.get(`${completed ? '/surveys/completed' : '/surveys/'}`, {
       headers: {
         Authorization: `Bearer ${parsedToken.token}`,
       },

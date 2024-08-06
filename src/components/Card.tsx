@@ -32,7 +32,7 @@ export function Card(props: CardProps) {
     light: "bg-light",
     secondary: "bg-secondary",
     ghost: "bg-transparent",
-    outline: "bg-white border border-gray",
+    outline: "bg-white border border-gray-light",
     dark: "bg-dark-video"
   };
 

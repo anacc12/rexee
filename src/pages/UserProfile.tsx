@@ -15,6 +15,7 @@ import Navigation from "../components/Navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
+import Card from "../components/Card";
 
 const UserProfile = () => {
   const form = useForm<UpdateForm>();
@@ -98,161 +99,165 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="w-screen h-screen flex">
+    <div className="w-screen h-screen flex bg-extra-light p-6 gap-6 relative">
       <Navigation />
 
-      <div className="flex flex-col flex-1 p-6 gap-4">
+      <div className="flex flex-col flex-1 gap-4 ml-[264px]">
         <h4 className="text-[24px] font-bold">Profile Settings</h4>
-        <hr className="border-t-1 border-gray-light w-full" />
+        {/* <hr className="border-t-1 border-gray-light w-full" /> */}
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-[500px]"
+        <Card
+          rounded="xxl"
+          cardStyle="outline"
+          cardSize="base"
+          className="max-w-[500px] flex flex-col"
         >
-          <div className="flex flex-col gap-4">
-                <ul
-                  className="flex flex-wrap p-1 list-none rounded-full bg-light w-full"
-                  data-tabs="tabs"
-                  role="list"
-                >
-                  <li className="flex-auto text-center">
-                    <a
-                      className={`flex items-center justify-center w-full px-0 py-2 text-[14px] font-medium mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
-                        personal ? "bg-white" : ""
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+            <div className="flex flex-col gap-4">
+              <ul
+                className="flex flex-wrap p-1 list-none rounded-full bg-extra-light w-full"
+                data-tabs="tabs"
+                role="list"
+              >
+                <li className="flex-auto text-center">
+                  <a
+                    className={`flex items-center justify-center w-full px-0 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
+                      personal ? "bg-white font-semibold" : "font-medium"
+                    }`}
+                    onClick={handlePersonalTab}
+                  >
+                    Personal data
+                  </a>
+                </li>
+                <li className="flex-auto text-center">
+                  <a
+                    className={`flex items-center justify-center w-full px-0 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
+                      !personal ? "bg-white font-semibold" : "font-medium"
+                    }`}
+                    onClick={handleLoginTab}
+                  >
+                    Login data
+                  </a>
+                </li>
+              </ul>
+
+              {personal && (
+                <>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      First name
+                    </p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      placeholder="Enter your first name"
+                      {...register("first_name")}
+                      className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.first_name
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
                       }`}
-                      onClick={handlePersonalTab}
-                    >
-                      Personal data
-                    </a>
-                  </li>
-                  <li className="flex-auto text-center">
-                    <a
-                      className={`flex items-center justify-center w-full px-0 py-2 text-[14px] font-medium mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
-                        !personal ? "bg-white" : ""
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      Last name
+                    </p>
+                    <input
+                      type="text"
+                      id="last_name"
+                      placeholder="Enter your last name"
+                      {...register("last_name")}
+                      className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.last_name
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
                       }`}
-                      onClick={handleLoginTab}
-                    >
-                      Login data
-                    </a>
-                  </li>
-                </ul>
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      Gender
+                    </p>
+                    <input
+                      type="text"
+                      id="gender"
+                      placeholder="Enter your gender"
+                      {...register("gender")}
+                      className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.gender
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      Country
+                    </p>
+                    <input
+                      type="text"
+                      id="country"
+                      placeholder="Enter your country"
+                      {...register("country")}
+                      className={`w-full text-[14px] p-3 mb-4 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.country
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
+                      }`}
+                    />
+                  </div>
+                </>
+              )}
 
-            {personal && (
-              <>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    First name
-                  </p>
-                  <input
-                    type="text"
-                    id="first_name"
-                    placeholder="Enter your first name"
-                    {...register("first_name")}
-                    className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.first_name
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    Last name
-                  </p>
-                  <input
-                    type="text"
-                    id="last_name"
-                    placeholder="Enter your last name"
-                    {...register("last_name")}
-                    className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.last_name
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    Gender
-                  </p>
-                  <input
-                    type="text"
-                    id="gender"
-                    placeholder="Enter your gender"
-                    {...register("gender")}
-                    className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.gender
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    Country
-                  </p>
-                  <input
-                    type="text"
-                    id="country"
-                    placeholder="Enter your country"
-                    {...register("country")}
-                    className={`w-full text-[14px] p-3 mb-4 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.country
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-              </>
-            )}
+              {!personal && (
+                <>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      Email
+                    </p>
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Enter your email"
+                      {...register("email")}
+                      className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.email
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-dark mb-2">
+                      Password
+                    </p>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Enter your password"
+                      {...register("password")}
+                      className={`w-full text-[14px] mb-4 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.password
+                          ? "bg-extra-light border-primary"
+                          : "bg-white"
+                      }`}
+                    />
+                  </div>
+                </>
+              )}
+            </div>
 
-            {!personal && (
-              <>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    Email
-                  </p>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="Enter your email"
-                    {...register("email")}
-                    className={`w-full text-[14px] p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.email
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <p className="text-[12px] font-semibold text-dark mb-2">
-                    Password
-                  </p>
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter your password"
-                    {...register("password")}
-                    className={`w-full text-[14px] mb-4 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.password
-                        ? "bg-extra-light border-primary"
-                        : "bg-white"
-                    }`}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-4 items-center">
-            <button
-              type="submit"
-              className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
-            >
-              Save changes
-            </button>
-          </div>
-        </form>
+            <div className="flex flex-col gap-4 items-center">
+              <button
+                type="submit"
+                className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+              >
+                Save changes
+              </button>
+            </div>
+          </form>
+        </Card>
       </div>
     </div>
   );

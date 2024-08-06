@@ -114,9 +114,9 @@ class AuthStore {
     }
   }
 
-  async getUserSurveys() {
+  async getUserSurveys(completed: boolean) {
     try {
-      const response = await authService.getUserSurveys();
+      const response = await authService.getUserSurveys(completed);
       return response.surveys;
     } catch (err) {
       console.log(err);
