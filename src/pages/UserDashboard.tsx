@@ -25,10 +25,10 @@ const UserDashboard = () => {
   }
 
   return (
-    <div className="w-screen h-screen flex">
-      <Navigation />
+    <div className="w-screen h-screen flex bg-extra-light gap-6 relative">
+      <Navigation active="dashboard" />
 
-      <div className="flex-1 p-6 gap-6">
+      <div className="flex flex-col flex-1 gap-4 ml-[264px] p-6">
         <h4 className="text-[24px] font-bold">
           Welcome, <span className="text-gray-cool">{user.first_name}</span>
         </h4>

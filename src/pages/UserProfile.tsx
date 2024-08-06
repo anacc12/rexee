@@ -100,7 +100,7 @@ const UserProfile = () => {
 
   return (
     <div className="w-screen h-screen flex bg-extra-light p-6 gap-6 relative">
-      <Navigation />
+      <Navigation active="profile"/>
 
       <div className="flex flex-col flex-1 gap-4 ml-[264px]">
         <h4 className="text-[24px] font-bold">Profile Settings</h4>

@@ -52,7 +52,7 @@ const UserSurveys = () => {
 
   return (
     <div className="w-screen h-screen flex bg-extra-light gap-6 relative">
-      <Navigation />
+      <Navigation active="surveys"/>
 
       <div className="flex flex-col flex-1 gap-4 ml-[264px] p-6">
         <div className="flex items-center gap-2">
@@ -99,26 +99,31 @@ const UserSurveys = () => {
 
           <div className="grid grid-cols-3 gap-4">
             {isCompleted && completed.length > 0 ? (
-              completed.map((survey) => (
+              completed.map((survey, ind) => (
                 <>
                   <Card
                     key={survey.token}
-                    cardStyle="outline"
+                    // cardStyle="outline"
                     rounded="xl"
                     cardSize="sm"
-                    className="flex flex-col gap-4"
+                    className="flex flex-col gap-4 border border-light"
                   >
                     <div className="flex flex-col gap-2">
-                      <h5 className="text-[16px] font-semibold">
-                        {survey.name}
-                      </h5>
+                      <div className="flex gap-2 items-start">
+                        <div className="w-[32px] h-[32px] text-[14px] bg-extra-light text-primary font-semibold border border-light rounded-full flex items-center justify-center">
+                          {ind}.
+                        </div>
+                        <h5 className="text-[16px] font-semibold">
+                          {survey.name}
+                        </h5>
+                      </div>
 
                       <div className="flex gap-2">
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-extra-light text-primary rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
                           {" "}
                           Inc. {survey.incentive_points}
                         </div>
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-extra-light text-primary rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
                           {" "}
                           Exp. {survey.experience_points}
                         </div>
@@ -134,26 +139,31 @@ const UserSurveys = () => {
                 </>
               ))
             ) : !isCompleted && surveys.length > 0 ? (
-              surveys.map((survey) => (
+              surveys.map((survey, ind) => (
                 <>
                   <Card
                     key={survey.token}
-                    cardStyle="outline"
+                    // cardStyle="outline"
                     rounded="xl"
                     cardSize="sm"
-                    className="flex flex-col gap-4"
+                    className="flex flex-col gap-4 border border-light"
                   >
                     <div className="flex flex-col gap-2">
-                      <h5 className="text-[16px] font-semibold">
-                        {survey.name}
-                      </h5>
+                      <div className="flex gap-2 items-start">
+                        <div className="w-[32px] h-[32px] text-[14px] bg-extra-light text-primary font-semibold border border-light rounded-full flex items-center justify-center">
+                          {ind}.
+                        </div>
+                        <h5 className="text-[16px] font-semibold">
+                          {survey.name}
+                        </h5>
+                      </div>
 
                       <div className="flex gap-2">
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-extra-light text-primary rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
                           {" "}
                           Inc. {survey.incentive_points}
                         </div>
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-extra-light text-primary rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
                           {" "}
                           Exp. {survey.experience_points}
                         </div>
