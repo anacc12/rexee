@@ -57,6 +57,28 @@ class AuthService extends ServiceBase {
     return decodedToken;
   }
 
+   getUserSurveys = async () => {
+    const token = Cookies.get('token');
+    const parsedToken = JSON.parse(token || '{}');
+    const response = await this.http.get('/surveys/', {
+      headers: {
+        Authorization: `Bearer ${parsedToken.token}`,
+      },
+    });
+    return response.data;
+  };
+
+  getCompletedSurveys = async () => {
+    const token = Cookies.get('token');
+    const parsedToken = JSON.parse(token || '{}');
+    const response = await this.http.get('/surveys/completed', {
+      headers: {
+        Authorization: `Bearer ${parsedToken.token}`,
+      },
+    });
+    return response.data;
+  };
+
   async forgotPassword(email: string): Promise<IdentityResponse> {
     const res = await this.http.post<IdentityResponse>(
       "/auth/forgot-password",
@@ -89,6 +111,8 @@ class AuthService extends ServiceBase {
   //   );
   //   return res.data;
   // }
+
+
   updateUser = async (data: UpdateForm) => {
     const token = Cookies.get('token');
     const parsedToken = JSON.parse(token || '{}');

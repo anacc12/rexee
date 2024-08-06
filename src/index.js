@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Login from "./pages/Login";
 import UserDashboard from "./pages/UserDashboard";
 import UserProfile from "./pages/UserProfile";
+import UserSurveys from "./pages/UserSurveys";
 import ForgotPassword from "./pages/ForgotPassword";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -25,6 +26,7 @@ root.render(
       <Route path="/dashboard" element={<UserDashboard />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/profile" element={<UserProfile />} />
+      <Route path="/surveys" element={<UserSurveys />} />
     </Routes>
   </Router>
 );
