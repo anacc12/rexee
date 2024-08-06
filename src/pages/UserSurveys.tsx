@@ -110,7 +110,7 @@ const UserSurveys = () => {
                   >
                     <div className="flex flex-col gap-2">
                       <div className="flex gap-2 items-start">
-                        <div className="w-[32px] h-[32px] text-[14px] bg-extra-light text-primary font-semibold border border-light rounded-full flex items-center justify-center">
+                        <div className="w-[24px] h-[24px] text-[12px] bg-extra-light text-primary font-bold border border-light rounded-full flex items-center justify-center">
                           {ind}.
                         </div>
                         <h5 className="text-[16px] font-semibold">
@@ -119,11 +119,11 @@ const UserSurveys = () => {
                       </div>
 
                       <div className="flex gap-2">
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-[#dba100] rounded-full">
                           {" "}
                           Inc. {survey.incentive_points}
                         </div>
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-[#dba100] rounded-full">
                           {" "}
                           Exp. {survey.experience_points}
                         </div>
@@ -150,7 +150,7 @@ const UserSurveys = () => {
                   >
                     <div className="flex flex-col gap-2">
                       <div className="flex gap-2 items-start">
-                        <div className="w-[32px] h-[32px] text-[14px] bg-extra-light text-primary font-semibold border border-light rounded-full flex items-center justify-center">
+                        <div className="w-[24px] h-[24px] text-[12px] bg-extra-light text-primary font-bold border border-light rounded-full flex items-center justify-center">
                           {ind}.
                         </div>
                         <h5 className="text-[16px] font-semibold">
@@ -159,11 +159,11 @@ const UserSurveys = () => {
                       </div>
 
                       <div className="flex gap-2">
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-[#dba100] rounded-full">
                           {" "}
                           Inc. {survey.incentive_points}
                         </div>
-                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-secondary-darker rounded-full">
+                        <div className="px-3 py-2 text-[11px] font-semibold leading-[8px] bg-[#fffbe8] border border-[#fffae0] text-[#dba100] rounded-full">
                           {" "}
                           Exp. {survey.experience_points}
                         </div>
