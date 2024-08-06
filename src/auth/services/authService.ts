@@ -11,6 +11,7 @@ import { ServiceBase } from "../../data/service";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
+import { UpdateForm } from "../models/IUpdatedUser";
 
 type AuthResponse = {
   token: string;
@@ -79,5 +80,24 @@ class AuthService extends ServiceBase {
     );
     return res.data;
   }
+
+// Check this with BE
+  // updateUser = async (data: { email?: string; password?: string, first_name?: string, last_name?: string, gender?: string, country?: string }) => {
+  //   const res = await this.http.put<IAuthenticatedUser>(
+  //     "/auth/user/data/",
+  //     data
+  //   );
+  //   return res.data;
+  // }
+  updateUser = async (data: UpdateForm) => {
+    const token = Cookies.get('token');
+    const parsedToken = JSON.parse(token || '{}');
+    const response = await this.http.put('/auth/user/data/', data, {
+      headers: {
+        Authorization: `Bearer ${parsedToken.token}`,
+      },
+    });
+    return response.data;
+  };
 }
 export default new AuthService();

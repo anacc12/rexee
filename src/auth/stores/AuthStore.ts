@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
 
-import { IToken, tokenFlowService, authService, IAuthenticatedUser } from '../../auth';
+import { IToken, tokenFlowService, authService, IAuthenticatedUser, UpdateForm } from '../../auth';
 import { jwtDecode } from 'jwt-decode';
 
 class AuthStore {
@@ -84,6 +84,25 @@ class AuthStore {
         const tokenExpiredEvent = new Event('tokenExpired');
         window.dispatchEvent(tokenExpiredEvent);
     }
+
+    // async updateUser(data: {}) {
+    //     try {
+    //         authService.updateUser(data)
+    //       } catch (err) {
+    //         console.log(err);
+    //       }
+    //   }
+
+    async updateUser(data: UpdateForm): Promise<IAuthenticatedUser | null> {
+        try {
+          const updatedUser = await authService.updateUser(data);
+          Cookies.set('user', JSON.stringify(updatedUser));
+          return updatedUser;
+        } catch (err) {
+          console.log(err);
+          return null;
+        }
+      }
 }
 
 export default new AuthStore();
