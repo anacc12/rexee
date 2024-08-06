@@ -6,7 +6,7 @@ import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import Card from "../components/Card";
 
-const UserSurveys = () => {
+const UserVouchers = () => {
   const [surveys, setSurveys] = useState<any[]>([]);
   const [completed, setCompleted] = useState<any[]>([]);
 
@@ -56,7 +56,7 @@ const UserSurveys = () => {
 
       <div className="flex flex-col flex-1 gap-4 ml-[264px] p-6">
         <div className="flex items-center gap-2">
-          <h4 className="text-[24px] font-bold">Your Surveys </h4>
+          <h4 className="text-[24px] font-bold">Your Vouchers </h4>
           <div className="flex items-center justify-center w-[24px] h-[24px] rounded-full !text-white bg-primary text-[13px] leading-[0px] font-medium">
             {surveys.length}
           </div>
@@ -188,4 +188,4 @@ const UserSurveys = () => {
   );
 };
 
-export default UserSurveys;
+export default UserVouchers;
