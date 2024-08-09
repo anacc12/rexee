@@ -123,6 +123,16 @@ class AuthStore {
       return null;
     }
   }
+
+  async getUserVouchers() {
+    try {
+      const response = await authService.getUserVouchers();
+      return response.amazon_vouchers;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
 }
 
 export default new AuthStore();

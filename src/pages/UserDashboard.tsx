@@ -14,6 +14,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await authStore.getUser();
+      console.log(userData)
       setUser(userData);
     };
 

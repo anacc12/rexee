@@ -79,6 +79,17 @@ class AuthService extends ServiceBase {
     return response.data;
   };
 
+  getUserVouchers = async () => {
+    const token = Cookies.get('token');
+    const parsedToken = JSON.parse(token || '{}');
+    const response = await this.http.get('/auth/user/data', {
+      headers: {
+        Authorization: `Bearer ${parsedToken.token}`,
+      },
+    });
+    return response.data;
+  };
+
   async forgotPassword(email: string): Promise<IdentityResponse> {
     const res = await this.http.post<IdentityResponse>(
       "/auth/forgot-password",
