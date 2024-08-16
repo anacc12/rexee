@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Login from "./pages/Login";
+import Blog from "./pages/Blog";
+import Article from "./pages/Article";
 import UserDashboard from "./pages/UserDashboard";
 import UserProfile from "./pages/UserProfile";
 import UserSurveys from "./pages/UserSurveys";
@@ -24,7 +26,12 @@ root.render(
       <Route path="/login" element={<Login />} />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/blog" element={<Blog />} />
+      {/* <Route path={`/blog/${slug}`} element={<Article />} /> */}
+      
+      <Route path="/blog/:slug" element={<Article />} />
       <Route path="/dashboard" element={<UserDashboard />} />
+
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/surveys" element={<UserSurveys />} />
