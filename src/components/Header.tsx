@@ -35,6 +35,9 @@ export function Header(props: HeaderProps) {
         <Link to={`/contact`} className="text-[16px] text-grey-900 font-semibold">
           Contact us
         </Link>
+        <Link to={`/blog`} className="text-[16px] text-grey-900 font-semibold">
+          Blog
+        </Link>
         <Link
           to='/login'
           className={clsx("text-[16px] px-4 py-2 rounded-full font-semibold", type == "dark" ? "bg-primary" : "bg-white")}
