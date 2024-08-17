@@ -16,10 +16,12 @@ import UserProfile from "./pages/UserProfile";
 import UserSurveys from "./pages/UserSurveys";
 import UserVouchers from "./pages/UserVouchers";
 import ForgotPassword from "./pages/ForgotPassword";
+import ScrollToTop from "./components/ScrollToTop"; 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
+    <ScrollToTop /> 
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/contact" element={<Contact />} />

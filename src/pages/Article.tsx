@@ -73,14 +73,20 @@ const Article: React.FC = () => {
   };
 
   if (!post) {
-    return <div>Loading...</div>;
+    return <div className="w-screen h-[90vh] flex justify-center items-center mx-auto">
+      <div className="loader bg-white outline-gray-light p-5 rounded-full flex space-x-3">
+        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.1s' }}></div>
+        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.3s' }}></div>
+        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.6s' }}></div>
+      </div>
+    </div>;
   }
 
   return (
     <>
-      <div className="w-screen h-[60vh] bg-light text-gray-900 flex flex-col gap-10 justify-center items-center border-b border-gray-light">
+      <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center border-b border-gray-light">
         <Header type="dark" />
-        <h1 className="text-[4.5rem] font-bold leading-[5rem]">
+        <h1 className="text-[3.7rem] font-bold leading-[5rem] max-w-[860px] text-center">
           {post.title.rendered}
         </h1>
       </div>
@@ -93,13 +99,13 @@ const Article: React.FC = () => {
 
       <div
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto"
+        className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med"
       ></div>
 
       {/* Related Articles Section */}
       {relatedPosts.length > 0 && (
-        <div className="py-12 max-w-[1224px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
+        <div className="py-12 max-w-[1224px] mx-auto border-t border-t-light">
+          <h2 className="text-2xl text-text-dark font-bold mb-6">Related Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedPosts.map((relatedPost) => (
 
@@ -116,7 +122,7 @@ const Article: React.FC = () => {
                 />
 
                 <div className="p-4 flex flex-col gap-3">
-                  <Link to={`/blog/${relatedPost.slug}`} className="text-[18px] font-semibold">
+                  <Link to={`/blog/${relatedPost.slug}`} className="text-[18px] font-semibold text-text-dark">
                     {relatedPost.title.rendered}
                   </Link>
                   {relatedPost.excerpt?.rendered && (

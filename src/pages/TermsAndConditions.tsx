@@ -8,14 +8,14 @@ import flashYellow from "../../src/assets/svg/flash-yellow.svg";
 const TermsAndConditions = () => {
   return (
     <>
-      <div className="w-screen h-[60vh] bg-transparent text-gray-900 flex flex-col gap-10 justify-center items-center border-b border-gray-light">
+      <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center">
         <Header type="dark" />
         <h1 className="text-[4.5rem] font-bold leading-[5rem]">
           Terms & Conditions
         </h1>
       </div>
 
-      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto">
+      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med">
         {/* INTRO */}
         <p>
           Welcome to Rexee, an application for market research and opinion

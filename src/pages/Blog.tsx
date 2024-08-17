@@ -25,6 +25,8 @@ type Post = {
 
 const Blog = () => {
     const [posts, setPosts] = useState<Post[]>([]);
+    const [loading, setLoading] = useState(true); // Loading state
+
 
     useEffect(() => {
         fetch("https://wwb.ppl.mybluehost.me/wp-json/wp/v2/posts?_embed")
@@ -39,8 +41,12 @@ const Blog = () => {
                     coverImage: post._embedded?.['wp:featuredmedia']?.[0]?.media_details?.sizes?.thumbnail?.source_url || ''
                 }));
                 setPosts(formattedPosts);
+                setLoading(false);
             })
-            .catch((error) => console.error("Error fetching posts:", error));
+            .catch((error) => {
+                console.error("Error fetching posts:", error);
+                setLoading(false);
+            });
     }, []);
 
     return (
@@ -66,40 +72,50 @@ const Blog = () => {
             </div>
 
             <div className="py-12 max-w-[1224px] mx-auto h-full pb-10">
-                <ul className="grid grid-cols-3 gap-4">
-                    {posts.map((post) => (
-                        <li key={post.id} className="flex">
-                            <Card
-                                rounded="xxl"
-                                cardSize="none"
-                                className="flex flex-col border border-gray flex-1 overflow-hidden">
+                {loading ? (
+                    <div className="flex justify-center items-center h-full">
+                        <div className="loader bg-white outline-gray-light p-5 rounded-full flex space-x-3">
+                            <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.1s' }}></div>
+                            <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.3s' }}></div>
+                            <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDuration: '0.5s', animationDelay: '0.6s' }}></div>
+                        </div>
+                    </div>
+                ) : (
+                    <ul className="grid grid-cols-3 gap-4">
+                        {posts.map((post) => (
+                            <li key={post.id} className="flex">
+                                <Card
+                                    rounded="xxl"
+                                    cardSize="none"
+                                    className="flex flex-col border border-gray flex-1 overflow-hidden">
 
-                                <img
-                                    alt={post.title.rendered}
-                                    src={post.coverImage ? post.coverImage : missingCoverImage}
-                                    className="w-full h-[200px] object-cover"
-                                />
+                                    <img
+                                        alt={post.title.rendered}
+                                        src={post.coverImage ? post.coverImage : missingCoverImage}
+                                        className="w-full h-[200px] object-cover"
+                                    />
 
-                                <div className="p-4 flex flex-col gap-3">
-                                    <Link to={`/blog/${post.slug}`} className="text-[18px] font-semibold">
-                                        {post.title.rendered}
-                                    </Link>
-                                    {post.excerpt?.rendered && (
-                                        <div
-                                            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-                                            className="text-gray-dark text-[15px]"
-                                        />
-                                    )}
-                                    <Link to={`/blog/${post.slug}`} className="">
-                                        <span className="text-primary border-b border-b-primary">Read more</span>
-                                    </Link>
-                                </div>
+                                    <div className="p-4 flex flex-col gap-3">
+                                        <Link to={`/blog/${post.slug}`} className="text-[18px] font-semibold text-text-dark">
+                                            {post.title.rendered}
+                                        </Link>
+                                        {post.excerpt?.rendered && (
+                                            <div
+                                                dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                                                className="text-gray-dark text-[15px]"
+                                            />
+                                        )}
+                                        <Link to={`/blog/${post.slug}`} className="">
+                                            <span className="text-primary border-b border-b-primary">Read more</span>
+                                        </Link>
+                                    </div>
 
-                            </Card>
+                                </Card>
 
-                        </li>
-                    ))}
-                </ul>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
             <Banner />
