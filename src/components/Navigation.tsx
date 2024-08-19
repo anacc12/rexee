@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import logoDark from "../../src/assets/svg/logo-black.svg";
 import { ArrowLeft, Home } from "react-feather";
+import { authService, authStore } from "../auth";
 
 export interface NavigationProps {
   active: string;
@@ -9,6 +10,14 @@ export interface NavigationProps {
 
 export function Navigation(props: NavigationProps) {
   const { active } = props;
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await authStore.logout();
+    navigate("/")
+  };
+
+  
   return (
     <div className="fixed overflow-hidden top-[24px] left-[24px] bottom-[24px] p-6 flex flex-col items-start justify-between bg-white rounded-2xl border border-gray-light w-[240px]">
       <div className="flex flex-col gap-6 w-full">
@@ -71,10 +80,10 @@ export function Navigation(props: NavigationProps) {
       </div>
       <div className="flex flex-col gap-4 w-full">
         <hr className="border-t-1 border-light w-full" />
-        <Link className="text-[14px] flex gap-2 items-center font-semibold text-gray-dark" to={"/surveys"}>
+        <button className="text-[14px] flex gap-2 items-center font-semibold text-gray-dark" onClick={handleLogout}>
           <ArrowLeft size={16} />
           Log out
-        </Link>
+        </button>
       </div>
     </div>
   );

@@ -54,14 +54,6 @@ class AuthStore {
     Cookies.set("token", JSON.stringify(token));
   }
 
-  // async setUser() {
-  //     try {
-  //         const userData = await authService.getUser();
-  //         Cookies.set('user', JSON.stringify(userData));
-  //     } catch (err) {
-  //         console.log(err);
-  //     }
-  // }
 
   async setUser() {
     try {
@@ -79,12 +71,25 @@ class AuthStore {
     return user ? JSON.parse(user) : null;
   }
 
+
+
   async dispatchTokenEvent() {
     this.isDispatched = true;
 
     await this.syncToken();
 
     setTimeout(() => (this.isDispatched = false), 1000);
+  }
+
+
+  async logout() {
+    try {
+      await authService.logout(); // Call the logout function in authService
+      this.removeUser(); // Remove user and token from cookies
+      console.log("User logged out successfully.");
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
   }
 
   async removeUser() {

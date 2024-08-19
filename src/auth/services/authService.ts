@@ -22,12 +22,12 @@ type AuthResponse = {
   expireTime: string;
 };
 
-// const axiosInstance = axios.create({
-//   baseURL: "http://93.63.175.216:8000/api/v1/prod",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// });
+ const updateUserBase = axios.create({
+   baseURL: "https://93.63.175.219/api/v1/prod",
+   headers: {
+     "Content-Type": "application/json",
+   },
+ });
 
 class AuthService extends ServiceBase {
   getLoggerName(): string {
@@ -98,6 +98,14 @@ class AuthService extends ServiceBase {
     return res.data;
   }
 
+  async resetPasswordCode(code: string): Promise<IdentityResponse> {
+    const res = await this.http.post<IdentityResponse>(
+      "/auth/forgot-password",
+      { code }
+    );
+    return res.data;
+  }
+
   async createPassword(data: Password): Promise<IdentityResponse> {
     const res = await this.http.put<IdentityResponse>(
       "/auth/create-password",
@@ -114,25 +122,40 @@ class AuthService extends ServiceBase {
     return res.data;
   }
 
-// Check this with BE
-  // updateUser = async (data: { email?: string; password?: string, first_name?: string, last_name?: string, gender?: string, country?: string }) => {
-  //   const res = await this.http.put<IAuthenticatedUser>(
-  //     "/auth/user/data/",
-  //     data
-  //   );
-  //   return res.data;
-  // }
-
-
   updateUser = async (data: UpdateForm) => {
     const token = Cookies.get('token');
     const parsedToken = JSON.parse(token || '{}');
-    const response = await this.http.put('/auth/user/data/', data, {
+    const response = await updateUserBase.post('/auth/user/data/', data, {
       headers: {
         Authorization: `Bearer ${parsedToken.token}`,
       },
     });
     return response.data;
   };
+
+
+  logout = async () => {
+    try {
+      const token = Cookies.get('token');
+      const parsedToken = JSON.parse(token || '{}');
+  
+      // Make the API call to log out the user
+      await this.http.post('/auth/logout/', null, {
+        headers: {
+          Authorization: `Bearer ${parsedToken.token}`,
+        },
+      });
+  
+      // Clear the authentication token and other relevant cookies
+      Cookies.remove('token');
+      Cookies.remove('refreshToken');
+      Cookies.remove('user');
+    } catch (error) {
+      const err = error as Error; // Assert error as Error type
+      console.error("Logout failed:", err.message);
+    }
+  };
 }
+
+  
 export default new AuthService();
