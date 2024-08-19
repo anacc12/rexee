@@ -81,7 +81,9 @@ const Login = () => {
   return (
     <div className="w-screen h-screen bg-extra-light">
       <div className="w-screen h-[200px] pb-8 bg-primary text-white flex flex-col gap-10 justify-center items-center z-10">
+      <Link to={`/`}>
         <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
+        </Link>
       </div>
       <Card
         rounded="xxl"

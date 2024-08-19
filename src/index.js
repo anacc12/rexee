@@ -17,6 +17,8 @@ import UserSurveys from "./pages/UserSurveys";
 import UserVouchers from "./pages/UserVouchers";
 import ForgotPassword from "./pages/ForgotPassword";
 import ScrollToTop from "./components/ScrollToTop"; 
+import ResetPasswordCode from "./pages/ResetPasswordCode"; 
+import ResetPassword from "./pages/ResetPassword"; 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +37,9 @@ root.render(
       <Route path="/dashboard" element={<UserDashboard />} />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password-code" element={<ResetPasswordCode />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/surveys" element={<UserSurveys />} />
       <Route path="/vouchers" element={<UserVouchers />} />
