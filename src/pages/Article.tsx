@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Card from "../components/Card";
 
 import missingCoverImage from "../../src/assets/img/missing-image-rexee.png";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
+import Tag from "../components/Tag";
 
 type Post = {
   id: number;
@@ -23,12 +25,25 @@ type Post = {
   categories: number[];
 };
 
+type Category = {
+  id: number;
+  name: string;
+};
+
 const Article: React.FC = () => {
+  const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<Post | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<Post[]>([]); // State for related posts
+  const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
+  const [allCategories, setAllCategories] = useState<Category[]>([]);
 
   useEffect(() => {
+    fetch("https://wwb.ppl.mybluehost.me/wp-json/wp/v2/categories")
+      .then((response) => response.json())
+      .then((data) => setAllCategories(data))
+      .catch((error) => console.error("Error fetching categories:", error));
+
+
     fetch(`https://wwb.ppl.mybluehost.me/wp-json/wp/v2/posts?slug=${slug}&_embed`)
       .then((response) => response.json())
       .then((data) => {
@@ -82,13 +97,30 @@ const Article: React.FC = () => {
     </div>;
   }
 
+  const truncateExcerpt = (excerpt: string, length: number): string => {
+    return excerpt.length > length ? excerpt.substring(0, length) + "..." : excerpt;
+  };
+
+    const postCategories = post.categories.map(categoryId => {
+      const category = allCategories.find(cat => cat.id === categoryId);
+      return category ? category.name : null;
+    }).filter(Boolean); // Filter out any null values
+
   return (
     <>
       <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center border-b border-gray-light">
         <Header type="dark" />
-        <h1 className="text-[3.7rem] font-bold leading-[5rem] max-w-[860px] text-center">
-          {post.title.rendered}
-        </h1>
+        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-wrap gap-2">
+            {postCategories.map((categoryName, index) => (
+              <Tag key={index} text={categoryName!} style="primary" size="sm" />
+            ))}
+          </div>
+          <h1 className="text-[3.7rem] font-bold leading-[5rem] max-w-[860px] text-center">
+            {post.title.rendered}
+          </h1>
+        </div>
+
       </div>
 
       <img
@@ -105,7 +137,18 @@ const Article: React.FC = () => {
       {/* Related Articles Section */}
       {relatedPosts.length > 0 && (
         <div className="py-12 max-w-[1224px] mx-auto border-t border-t-light">
-          <h2 className="text-2xl text-text-dark font-bold mb-6">Related Articles</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl text-text-dark font-bold mb-6">Related Articles</h2>
+            <Button
+              text="View all"
+              style="primary"
+              size="base"
+              rounded="full"
+              className="self-start"
+              action={() => navigate('/blog')}
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedPosts.map((relatedPost) => (
 
@@ -127,7 +170,12 @@ const Article: React.FC = () => {
                   </Link>
                   {relatedPost.excerpt?.rendered && (
                     <div
-                      dangerouslySetInnerHTML={{ __html: relatedPost.excerpt.rendered }}
+                      dangerouslySetInnerHTML={{
+                        __html: truncateExcerpt(
+                          relatedPost.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, ""),
+                          90
+                        ),
+                      }}
                       className="text-gray-dark text-[15px]"
                     />
                   )}

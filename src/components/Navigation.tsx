@@ -25,7 +25,7 @@ export function Navigation(props: NavigationProps) {
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
               active == "dashboard"
-                ? "bg-extra-light text-primary font-semibold before:absolute before:shadow-[1px_0px_13px_0px_#d6bcfa] before:bg-primary before:left-0 before:h-[24px] before:w-[4px] before:rounded-full"
+                ? "bg-primary text-white font-semibold before:absolute before:shadow-[1px_0px_13px_0px_#d6bcfa] before:bg-primary before:left-0 before:h-[24px] before:w-[4px] before:rounded-full"
                 : "text-dark"
             }`}
             to={"/dashboard"}
@@ -40,7 +40,7 @@ export function Navigation(props: NavigationProps) {
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
               active == "surveys"
-                ? "bg-extra-light text-primary font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
+                ? "bg-primary text-white font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
                 : ""
             }`}
             to={"/surveys"}
@@ -50,7 +50,7 @@ export function Navigation(props: NavigationProps) {
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
               active == "vouchers"
-                ? "bg-extra-light text-primary font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
+                ? "bg-primary text-white font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
                 : ""
             }`}
             to={"/vouchers"}
@@ -60,7 +60,7 @@ export function Navigation(props: NavigationProps) {
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
               active == "profile"
-                ? "bg-extra-light text-primary font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
+                ? "bg-primary text-white font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
                 : ""
             }`}
             to={"/profile"}
