@@ -15,6 +15,8 @@ import UserDashboard from "./pages/UserDashboard";
 import UserProfile from "./pages/UserProfile";
 import UserSurveys from "./pages/UserSurveys";
 import UserVouchers from "./pages/UserVouchers";
+import UserItems from "./pages/UserItems";
+
 import ForgotPassword from "./pages/ForgotPassword";
 import ScrollToTop from "./components/ScrollToTop"; 
 import ResetPasswordCode from "./pages/ResetPasswordCode"; 
@@ -42,6 +44,7 @@ root.render(
 
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/surveys" element={<UserSurveys />} />
+      <Route path="/items" element={<UserItems />} />
       <Route path="/vouchers" element={<UserVouchers />} />
     </Routes>
   </Router>

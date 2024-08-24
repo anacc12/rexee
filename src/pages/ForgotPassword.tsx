@@ -19,6 +19,11 @@ type ForgotPasswordForm = {
 const ForgotPassword = () => {
   const form = useForm<ForgotPasswordForm>();
 
+
+  const handleButtonClick = () => {
+    navigate("/reset-password-code");
+  };
+
   const {
     register,
     handleSubmit,
@@ -80,6 +85,7 @@ const ForgotPassword = () => {
             <button
               type="submit"
               className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+              onClick={handleButtonClick}
             >
               Get a link
             </button>

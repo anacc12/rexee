@@ -31,7 +31,7 @@ export function Navigation(props: NavigationProps) {
         <hr className="border-t-1 border-light w-full" />
 
         <div className="w-full flex flex-col gap-1">
-          <Link
+          {/* <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
               active == "dashboard"
                 ? "bg-primary text-white font-semibold before:absolute before:shadow-[1px_0px_13px_0px_#d6bcfa] before:bg-primary before:left-0 before:h-[24px] before:w-[4px] before:rounded-full"
@@ -39,12 +39,9 @@ export function Navigation(props: NavigationProps) {
             }`}
             to={"/dashboard"}
           >
-            {/* <Home
-              size={16}
-              color={active == "dashboard" ? "#5F00BA" : "#030E09"}
-            /> */}
+            
             <p>Dashboard</p>
-          </Link>
+          </Link> */}
 
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
@@ -65,6 +62,16 @@ export function Navigation(props: NavigationProps) {
             to={"/vouchers"}
           >
             Vouchers
+          </Link>
+          <Link
+            className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${
+              active == "items"
+                ? "bg-primary text-white font-semibold before:absolute before:bg-primary before:left-0 before:shadow-[1px_0px_13px_0px_#d6bcfa] before:h-[24px] before:w-[4px] before:rounded-full"
+                : ""
+            }`}
+            to={"/items"}
+          >
+            Items
           </Link>
           <Link
             className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${

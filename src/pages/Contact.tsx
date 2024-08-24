@@ -46,7 +46,7 @@ const Contact = () => {
             left: "8%",
           }}
         />
-        <h1 className="text-[4.5rem] font-bold leading-[5rem] z-20">
+        <h1 className="sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] font-bold leading-[5rem] z-20">
           Contact us
         </h1>
         <p className="text-[20px] text-white z-20 w-[40%] text-center">

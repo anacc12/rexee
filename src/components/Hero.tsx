@@ -34,17 +34,17 @@ const Hero = () => {
             <img
               src={rexee}
               alt="Rexee face"
-              className="h-[70%] w-auto absolute z-10"
+              className="xs:h-[35%] sm:h-[50%] md:h-[70%] w-auto absolute z-10"
               style={{
                 bottom: "-12%",
                 left: "-6%",
               }}
             />
-          <div className="flex items-center justify-center align-center flex-col gap-12 max-w-[70%] z-20">
-            <h1 className="text-[4.5rem] font-bold font-EasyGrotesk leading-[5rem]">
+          <div className="flex items-center justify-center align-center flex-col gap-12 xs:max-w-[90%] sm:max-w-[70%]  z-20">
+            <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold font-EasyGrotesk ">
               Discover, share and win with <span className="text-secondary-light">Rexee's</span> fun surveys
             </h1>
-            <p className="text-[20px] text-white">
+            <p className="text-[20px] xs:text-[16px] text-white">
               Step into the world of immersive VR and get rewarded for your
               opinions!
             </p>

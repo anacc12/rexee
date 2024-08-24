@@ -50,7 +50,7 @@ const Login = () => {
           expireTime: response.expireTime,
         });
         await authStore.setUser();
-        navigate("/dashboard");
+        navigate("/surveys");
       }
     } catch (err: any) {
       let msg = "Wrong credentials.";

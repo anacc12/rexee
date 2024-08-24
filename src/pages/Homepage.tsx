@@ -59,22 +59,22 @@ const Homepage = () => {
         cardStyle="ghost"
         rounded="xxl"
         width="w-full"
-        className="flex mt-10"
+        className="flex sm:mt-10 xs:mt-3"
         children={
-          <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto">
-            <div className="flex gap-4 items-center">
-              <h2 className="text-[46px] font-bold text-gray-900">
+          <div className="max-w-[1224px] flex flex-col sm:gap-[52px] xs:gap-8 mx-auto">
+            <div className="flex gap-4 items-center xs:flex-col-reverse xs:items-start sm:flex-row-reverse md:flex-row">
+              <h2 className="xs:text-[32px] xs:leading-[38px] sm:text-[36px] sm:leading-[42px] md:text-[46px] font-bold text-gray-900">
                 Where surveys <span className="text-primary">transcend</span>{" "}
                 the mundane!
               </h2>
               <img
                 src={flashYellow}
                 alt="Flash Icon Yellow"
-                className="h-[56px] w-auto"
+                className="xs:h-[60px] md:h-[56px] w-auto"
               />
             </div>
 
-            <div className="flex gap-7">
+            <div className="flex gap-7 xs:flex-col med:flex-row">
               <Card
                 cardSize="none"
                 cardStyle="ghost"
@@ -174,19 +174,20 @@ const Homepage = () => {
               }}
             />
 
-            <div className="max-w-[1224px] flex flex-col gap-[52px] mx-auto z-20">
-              <div className="flex gap-4 items-center">
+            <div className="max-w-[1224px] flex flex-col xs:gap-8 sm:gap-[52px] mx-auto z-20">
+              <div className="flex gap-4 xs:items-start sm:items-center xs:flex-col sm:flex-row">
                 <img
                   src={blingYellow}
                   alt="Flash Icon Yellow"
                   className="h-[52px] w-auto"
                 />
-                <h2 className="text-[46px] font-bold text-white">
+                <h2 className="xs:text-[32px] xs:leading-[38px] sm:text-[36px] sm:leading-[42px] md:text-[46px] font-bold text-white">
                   Enjoy every survey moment
                 </h2>
               </div>
 
-              <div className="flex gap-6">
+{/* IMAGES */}
+              <div className="flex gap-6 xs:flex-col md:flex-row">
                 <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
                   <div className="grid grid-cols-2 grid-rows-2 gap-5 w-full h-full">
                     <div className="col-span-1 row-span-2 h-full">
@@ -225,11 +226,11 @@ const Homepage = () => {
                 </div>
               </div>
 
-              <div className="flex gap-7">
+              <div className="flex gap-7 xs:flex-col md:flex-row">
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
-                  className="flex flex-col gap-4 items-start"
+                  className="flex flex-col xs:gap-2 md:gap-4 items-start"
                   children={
                     <>
                       <h4 className="text-[24px] font-semibold">
@@ -245,7 +246,7 @@ const Homepage = () => {
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
-                  className="flex flex-col gap-4 items-start"
+                  className="flex flex-col xs:gap-2 md:gap-4 items-start"
                   children={
                     <>
                       <h4 className="text-[24px] font-semibold">
@@ -261,7 +262,7 @@ const Homepage = () => {
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
-                  className="flex flex-col gap-4 items-start"
+                  className="flex flex-col xs:gap-2 md:gap-4 items-start"
                   children={
                     <>
                       <h4 className="text-[24px] font-semibold">
@@ -288,7 +289,7 @@ const Homepage = () => {
         width="w-full"
         className="flex mt-4 max-w-[1400px] mx-auto"
         children={
-          <div className="w-full max-w-[1224px] flex gap-[100px] mx-auto items-center">
+          <div className="w-full max-w-[1224px] flex xs:gap-10 md:gap-[100px] mx-auto items-center xs:flex-col md:flex-row">
             <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl p-[44px]">
               <LazyImage
                 src={Image.Leaderboard}
@@ -304,7 +305,7 @@ const Homepage = () => {
                   className="h-[52px] w-auto"
                 />
 
-                <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                <h2 className="xs:text-[32px] xs:leading-[38px] sm:text-[36px] sm:leading-[42px] md:text-[46px] md:leading-[52px] font-bold text-gray-900">
                   Turn research into a{" "}
                   <span className="text-primary">fun game!</span>
                 </h2>
@@ -365,7 +366,7 @@ const Homepage = () => {
                 left: "-3%",
               }}
             />
-            <div className="w-full max-w-[1224px] flex gap-[130px] mx-auto items-center z-20">
+            <div className="w-full max-w-[1224px] flex xs:gap-10 md:gap-[130px] mx-auto items-center z-20 xs:flex-col-reverse md:flex-row">
               <div className="flex flex-col gap-10 flex-1">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-4 items-start">
@@ -374,7 +375,7 @@ const Homepage = () => {
                       alt="Gift Icon"
                       className="h-[52px] w-auto"
                     />
-                    <h2 className="text-[46px] leading-[52px] font-bold text-gray-900">
+                    <h2 className="xs:text-[36px] xs:leading-[42px] md:text-[46px] leading-[52px] font-bold text-gray-900">
                       Score awesome rewards with Rexee
                     </h2>
                   </div>
@@ -440,10 +441,10 @@ const Homepage = () => {
         width="w-full"
         className="flex mt-10"
         children={
-          <div className="w-full max-w-[1224px] flex flex-col gap-[52px] mx-auto">
+          <div className="w-full max-w-[1224px] flex flex-col xs:gap-8 sm:gap-[52px] mx-auto">
             <div className="flex flex-col gap-4 items-start">
               <img src={wave} alt="Wave Icon" className="h-[52px] w-auto" />
-              <h2 className="text-[46px] font-bold text-gray-900">
+              <h2 className="xs:text-[32px] xs:leading-[38px] sm:text-[36px] sm:leading-[42px] md:text-[46px] font-bold text-gray-900">
                 Say <span className="text-primary">hello</span> to our team!
               </h2>
             </div>

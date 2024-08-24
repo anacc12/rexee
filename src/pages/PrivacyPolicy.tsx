@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
     <>
       <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center">
         <Header type="dark" />
-        <h1 className="text-[4.5rem] font-bold leading-[5rem]">
+        <h1 className="sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] font-bold leading-[5rem]">
           Privacy Policy
         </h1>
       </div>

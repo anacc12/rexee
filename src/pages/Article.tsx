@@ -116,7 +116,7 @@ const Article: React.FC = () => {
               <Tag key={index} text={categoryName!} style="primary" size="sm" />
             ))}
           </div>
-          <h1 className="text-[3.7rem] font-bold leading-[5rem] max-w-[860px] text-center">
+          <h1 className="text-[3.7rem] leading-[5rem] font-bold max-w-[860px] text-center">
             {post.title.rendered}
           </h1>
         </div>

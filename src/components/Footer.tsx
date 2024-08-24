@@ -14,9 +14,9 @@ export function Footer(props: FooterProps) {
   };
 
   return (
-    <div className="w-screen flex flex-col relative gap-10 -mx-4 bg-light pt-10 pb-20 ">
-      <div className="w-full flex flex-1 justify-between max-w-[1224px] mx-auto">
-        <div className="flex flex-col gap-4">
+    <div className="w-screen flex flex-col relative gap-10 -mx-4 bg-light pt-10 pb-20 px-6 ">
+      <div className="w-full flex flex-1 justify-between max-w-[1224px] mx-auto xs:flex-col xs:items-start xs:gap-6 sm:gap-0">
+        <div className="flex flex-col gap-4 ">
           <img src={logo} alt="Logo" className="w-[192px] h-auto" />
           <p className="text-[22px] font-semibold">Enjoy every survey moment!</p>
 
@@ -25,7 +25,9 @@ export function Footer(props: FooterProps) {
             <p>info@rexee.com</p>
           </div>
         </div>
-        <div className="flex flex-col gap-4 items-end">
+
+
+        <div className="flex flex-col gap-4 items-end xs:items-start sm:items-end">
           <Link to={`/`} className="text-[16px] text-grey-900 font-semibold">
             Home
           </Link>
@@ -43,10 +45,10 @@ export function Footer(props: FooterProps) {
 
       <hr className="border-t-2 border-gray w-full max-w-[1224px] mx-auto" />
 
-      <div className="w-full flex flex-1 justify-between items-start max-w-[1224px] mx-auto">
+      <div className="w-full flex flex-1 justify-between items-start max-w-[1224px] mx-auto sm:flex-row xs:flex-col xs:gap-6 sm:gap-0">
         <div className="flex flex-col gap-4">
           <p className="text-[22px] font-semibold">Visit us at FFIND</p>
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-1 xs:items-start sm:items-center xs:flex-col sm:flex-row">
             <MapPin size="18" color="#8A8AA1" />
             <p>
               FFIND srl – Via Ercole Bernabei, 51 90145 – Palermo (Italy) P.IVA

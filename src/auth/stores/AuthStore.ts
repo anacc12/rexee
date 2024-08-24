@@ -129,6 +129,37 @@ class AuthStore {
     }
   }
 
+  async getUserUsedItems() {
+    try {
+      const response = await authService.getUserData();
+      return response.currently_used_items;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
+
+  async getUserPurchasedItems() {
+    try {
+      const response = await authService.getUserData();
+      return response.purchased_items;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
+
+  async getUserData() {
+    try {
+      const response = await authService.getUserData();
+      return response;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
+
+
   async getUserVouchers() {
     try {
       const response = await authService.getUserVouchers();

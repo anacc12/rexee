@@ -52,7 +52,7 @@ export function Card(props: CardProps) {
     sm: "p-4",
     base: "p-6",
     md: "p-8",
-    lg: "p-20",
+    lg: "md:p-20 xs:p-8 sm:p-12",
     huge: "p-24"
   };
 
