@@ -99,10 +99,10 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="w-screen h-screen flex bg-extra-light p-6 gap-6 relative">
-      <Navigation active="profile"/>
+    <div className="w-screen h-full min-h-screen md:h-screen flex flex-col md:flex-row bg-extra-light gap-0 md:gap-6 relative">
+      <Navigation active="profile" />
 
-      <div className="flex flex-col flex-1 gap-4 ml-[264px]">
+      <div className="flex flex-col flex-1 gap-4 md:ml-[240px] p-6">
         <h4 className="text-[24px] font-bold">Profile Settings</h4>
         {/* <hr className="border-t-1 border-gray-light w-full" /> */}
 

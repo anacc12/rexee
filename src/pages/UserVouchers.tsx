@@ -44,10 +44,10 @@ const UserVouchers = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex bg-extra-light gap-6 relative">
+    <div className="w-screen h-full min-h-screen md:h-screen flex flex-col md:flex-row bg-extra-light gap-0 md:gap-6 relative">
       <Navigation active="vouchers" />
 
-      <div className="flex flex-col flex-1 gap-4 ml-[264px] p-6">
+      <div className="flex flex-col flex-1 gap-4 md:ml-[240px] p-6">
         <div className="flex items-center gap-2">
           <h4 className="text-[24px] font-bold">Your Vouchers </h4>
           <div className="flex items-center justify-center w-[24px] h-[24px] rounded-full !text-white bg-primary text-[13px] leading-[0px] font-medium">
@@ -63,7 +63,7 @@ const UserVouchers = () => {
         >
           {/* <p className="text-[18px] font-semibold text-dark mb-4">{isCompleted ? "Completed surveys" : "All surveys"}</p> */}
 {vouchers && vouchers.length > 0 ? (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             
               { vouchers.map((voucher, ind) => (
                 <>

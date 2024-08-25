@@ -9,7 +9,8 @@ import { ChevronDown, X } from "react-feather";
 
 import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 import missingCoverImage from "../../src/assets/img/missing-image-rexee.png";
-import flashes from "../../src/assets/svg/flashes-yellow.svg";
+import flashesYellow from "../../src/assets/svg/flashes-yellow.svg";
+import flashesWhite from "../../src/assets/svg/flashes-white.svg";
 
 type Post = {
     id: number;
@@ -118,12 +119,22 @@ const Blog = () => {
                 </p>
 
                 <img
-                    src={flashes}
+                    src={flashesYellow}
                     alt="Flashes Icon"
-                    className="xs:h-[90%] md:h-[120%] w-auto absolute inset-x-0"
+                    className="xs:hidden sm:hidden lg:block h-[120%] w-auto absolute inset-x-0"
                     style={{
                         bottom: "-10%",
                         left: "-18%",
+                    }}
+                />
+
+                <img
+                    src={flashesWhite}
+                    alt="Flashes Icon"
+                    className="scale-125 opacity-10 w-auto absolute inset-x-0 lg:hidden"
+                    style={{
+                        bottom: "0%",
+                        left: "0%",
                     }}
                 />
             </div>
@@ -157,8 +168,8 @@ const Blog = () => {
                                     <li key={category.id}>
                                         <a
                                             className={`block my-1 px-4 py-2 text-[14px] rounded-full cursor-pointer ${selectedCategories.includes(category.id)
-                                                    ? "bg-primary text-white font-semibold"
-                                                    : "text-dark"
+                                                ? "bg-primary text-white font-semibold"
+                                                : "text-dark"
                                                 }`}
                                             onClick={() => toggleCategory(category.id)}
                                         >
