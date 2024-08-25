@@ -28,7 +28,7 @@ module.exports = {
         easyGrotesk: ["EasyGrotesk", "sans-serif"],
       },
       screens: {
-        'xs': {'min': '200px', 'max': '639px'},
+        'xs': {'min': '200px', 'max' : '639px'},
       },
     },
   },

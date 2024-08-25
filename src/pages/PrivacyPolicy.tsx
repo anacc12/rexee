@@ -10,12 +10,12 @@ const PrivacyPolicy = () => {
     <>
       <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center">
         <Header type="dark" />
-        <h1 className="sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] font-bold leading-[5rem]">
+        <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold">
           Privacy Policy
         </h1>
       </div>
 
-      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med">
+      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med xs:px-6 lg:px-0">
         {/* INTRO */}
         <p>
           Welcome to Rexee, an application dedicated to market research and
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             1. Data Controller
           </h3>
           <p>The data controller for Rexee is:</p>
@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             2. Data We Collect
           </h3>
           <p>
@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             3. How We Use Your Data
           </h3>
           <p>FFIND SRL uses the collected data for the following purposes:</p>
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             4. Legal Basis For Processing Data
           </h3>
           <p>
@@ -144,7 +144,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             5. Data Sharing and Disclosure
           </h3>
           <p>
@@ -168,7 +168,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             6. Data Security
           </h3>
           <p>
@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             7. Data Retention
           </h3>
           <p>
@@ -193,7 +193,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             8. Your Rights
           </h3>
           <p>You have the following rights regarding your personal data: </p>
@@ -228,7 +228,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             9. Changes to This Privacy Policy
           </h3>
           <p>
@@ -242,7 +242,7 @@ const PrivacyPolicy = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             10. Contact Us
           </h3>
           <p>

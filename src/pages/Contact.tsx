@@ -46,19 +46,19 @@ const Contact = () => {
             left: "8%",
           }}
         />
-        <h1 className="sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] font-bold leading-[5rem] z-20">
+        <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold leading-[5rem] z-20">
           Contact us
         </h1>
-        <p className="text-[20px] text-white z-20 w-[40%] text-center">
+        <p className="text-[20px] xs:text-[16px] text-white z-20 w-[40%] text-center">
           Turn market research into a fun game and win amazing rewards along the
           way!
         </p>
       </div>
 
-      <div className="flex gap-4 py-12 max-w-[1224px] mx-auto h-full">
+      <div className="flex gap-4 py-12 max-w-[1224px] mx-auto h-full xs:flex-col sm:flex-row xs:px-6 lg:px-0">
         {/* FORM */}
         <div className="p-6 bg-light rounded-3xl flex-1">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold mb-6">
             Send us a message
           </h3>
           <form onSubmit={onSubmit} className="space-y-4">
@@ -110,7 +110,7 @@ const Contact = () => {
             alt="Flash Icon Yellow"
             className="h-[56px] w-auto"
           />
-          <h4 className="text-[24px] font-bold">
+          <h4 className="xs:text-[20px] sm:text-[24px] font-bold">
             Let us know what's on your mind!
           </h4>
 

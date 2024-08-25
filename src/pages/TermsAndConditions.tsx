@@ -10,12 +10,12 @@ const TermsAndConditions = () => {
     <>
       <div className="w-screen h-[60vh] bg-light text-text-dark flex flex-col gap-10 justify-center items-center">
         <Header type="dark" />
-        <h1 className="sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] font-bold leading-[5rem]">
+        <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold">
           Terms & Conditions
         </h1>
       </div>
 
-      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med">
+      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med xs:px-6 lg:px-0">
         {/* INTRO */}
         <p>
           Welcome to Rexee, an application for market research and opinion
@@ -27,7 +27,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             1. General Information
           </h3>
           <ul className="list-disc">
@@ -45,7 +45,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             2. Acceptance of Terms
           </h3>
           <p>
@@ -58,7 +58,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             3. User Accounts
           </h3>
           <p>
@@ -72,7 +72,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             4. Rexee Points
           </h3>
           <ul className="list-disc">
@@ -105,7 +105,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             5. Use of the App
           </h3>
           <p>
@@ -131,7 +131,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             6. Intellectual Property
           </h3>
           <p>
@@ -146,7 +146,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             7. Termination
           </h3>
           <p>
@@ -160,7 +160,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             8. Disclaimer of Warranties
           </h3>
           <p>
@@ -174,7 +174,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             9. Limitation of Liability
           </h3>
           <p>
@@ -188,7 +188,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             10. Governing Law
           </h3>
           <p>
@@ -202,7 +202,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             11. Changes to Terms and Conditions
           </h3>
           <p>
@@ -216,7 +216,7 @@ const TermsAndConditions = () => {
         <hr className="border-t-2 border-gray-light w-full" />
 
         <div className="flex flex-col gap-6">
-          <h3 className="text-[32px] leading-[42px] font-bold mb-6">
+          <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold xs:mb-1 sm:mb-6">
             11. Contact Us
           </h3>
           <p>
