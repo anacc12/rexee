@@ -8,8 +8,10 @@ import flashWhite from "../../src/assets/svg/flash-white.svg";
 import rexee from "../../src/assets/svg/rexee-face.svg";
 import { ArrowRight } from "react-feather";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate()
   return (
       <Card
         cardSize="lg"
@@ -53,7 +55,7 @@ const Hero = () => {
               style="secondary"
               size="base"
               rounded="full"
-              action={() => alert("Button clicked!")}
+              action={() => navigate("/contact")}
               icon={<ArrowRight size={20} color="#111827" />}
             />
           </div>

@@ -4,11 +4,13 @@ import Button from "./Button";
 
 import flashes from "../../src/assets/svg/flashes-yellow.svg";
 import { ArrowRight } from "react-feather";
+import { useNavigate } from "react-router-dom";
 
 export interface BannerProps {}
 
 export function Banner(props: BannerProps) {
   const {} = props;
+  const navigate = useNavigate()
 
   return (
     <div className="relative">
@@ -37,7 +39,7 @@ export function Banner(props: BannerProps) {
                   rounded="full"
                   className="self-start"
                   icon={<ArrowRight size={20} color="#111827" />}
-                  action={() => alert("Button clicked!")}
+                  action={() => navigate("/contact")}
                 />
               </div>
               <img

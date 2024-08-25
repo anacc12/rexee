@@ -23,8 +23,10 @@ import wave from "../../src/assets/img/wave.png";
 import TeamAvatar from "../components/TeamAvatar";
 import LazyVideo from "../components/LazyVideo";
 import LazyImage from "../components/LazyImage";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const navigate = useNavigate()
   const teamMembers = [
     { name: "Ennio Armato", role: "CEO", img: Image.Ennio },
     {
@@ -47,6 +49,10 @@ const Homepage = () => {
     { name: "Marko Franjic", role: "Technology Manager", img: Image.Marko },
     { name: "Manuel Matosevic", role: "Backend Developer", img: Image.Manuel },
   ];
+
+  const handleOpenWebsite = () => {
+    window.open("https://ffind.com", "_blank");
+  };
 
   return (
     <div className="p-4 pb-0">
@@ -341,7 +347,7 @@ const Homepage = () => {
                 rounded="full"
                 className="self-start"
                 icon={<ArrowRight size={20} color="#fff" />}
-                action={() => alert("Button clicked!")}
+                action={() => navigate("/contact")}
               />
             </div>
           </div>
@@ -468,7 +474,7 @@ const Homepage = () => {
                 size="base"
                 rounded="full"
                 icon={<ArrowRight size={20} color="#111827" />}
-                action={() => alert("Button clicked!")}
+                action={() => handleOpenWebsite()}
               />
             </div>
           </div>

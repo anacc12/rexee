@@ -56,7 +56,7 @@ export function Button(props: ButtonProps) {
         width,
         className
       )}
-      style={style=="secondary" ? { color: 'rgba(55, 65, 81)' } : style == "primary" ? {color: 'rgb(255, 255, 255)'} : {}}
+      style={style=="secondary" ? { color: 'rgba(17,8,43)' } : style == "primary" ? {color: 'rgb(255, 255, 255)'} : {}}
       onClick={action}
     >
       {text}
