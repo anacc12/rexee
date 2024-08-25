@@ -50,7 +50,14 @@ const Login = () => {
           expireTime: response.expireTime,
         });
         await authStore.setUser();
-        navigate("/surveys");
+        // Show success message
+        toast.success("Login successful!");
+
+        // Redirect after a short delay to allow the toast to be seen
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1000); // Adjust the delay as needed
+      
       }
     } catch (err: any) {
       let msg = "Wrong credentials.";
@@ -74,7 +81,7 @@ const Login = () => {
         }
       }
 
-      toast.error(msg);
+      toast.error("Oops, there was an error signing you in.");
     }
   };
 

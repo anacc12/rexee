@@ -66,31 +66,11 @@ const UserProfile = () => {
         setUser(updatedUser);
         toast.success("Profile updated successfully");
       } else {
-        toast.error("An error occurred while updating your profile.");
+        toast.error("Oops, an error occurred while updating your profile.");
       }
     } catch (err: any) {
-      let msg = "Wrong credentials.";
-      const error = err as AxiosError;
-
-      if (error.response?.data) {
-        const responseData = error.response.data as { [key: string]: any };
-
-        // Check if responseData is an object
-        if (typeof responseData === "object" && responseData !== null) {
-          // Loop through the keys of responseData
-          for (const key in responseData) {
-            if (Object.prototype.hasOwnProperty.call(responseData, key)) {
-              const value = responseData[key];
-              const txt = Array.isArray(value) ? value.join("") : value;
-              if (txt && txt !== "") {
-                msg = txt;
-              }
-            }
-          }
-        }
-      }
-
-      toast.error(msg);
+     
+      toast.error("Sorry, there was an error.");
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "react-feather"; // Import Menu and X icons
 
 import logo from "../../src/assets/svg/logo-white.svg";
@@ -14,6 +14,7 @@ export interface HeaderProps {
 
 export function Header(props: HeaderProps) {
   const { type, isRelative } = props;
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
 
   const handleClick = () => {
@@ -26,9 +27,8 @@ export function Header(props: HeaderProps) {
 
   return (
     <div
-      className={`w-screen max-w-[1224px] px-8   flex justify-between items-center ${
-        isRelative ? "py-8" : "absolute top-8"
-      } mx-auto z-30`}
+      className={`w-screen max-w-[1224px] px-8   flex justify-between items-center ${isRelative ? "py-8" : "absolute top-8"
+        } mx-auto z-30`}
     >
       <Link to={`/`}>
         <img
@@ -45,28 +45,25 @@ export function Header(props: HeaderProps) {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-6 items-center">
-        <Link to={`/`} className={`text-[16px] font-semibold ${
-        type == "light" ? "text-white" : "text-gray-900"
-      }`}>
+        <Link to={`/`} className={`text-[16px] font-semibold ${type == "light" ? "text-white" : "text-gray-900"
+          }`}>
           Home
         </Link>
-        <Link to={`/contact`} className={`text-[16px] font-semibold ${
-        type == "light" ? "text-white" : "text-gray-900"
-      }`}>
+        <Link to={`/contact`} className={`text-[16px] font-semibold ${type == "light" ? "text-white" : "text-gray-900"
+          }`}>
           Contact us
         </Link>
-        <Link to={`/blog`} className={`text-[16px] font-semibold ${
-        type == "light" ? "text-white" : "text-gray-900"
-      }`}>
+        <Link to={`/blog`} className={`text-[16px] font-semibold ${type == "light" ? "text-white" : "text-gray-900"
+          }`}>
           Blog
         </Link>
         <Link
           to="/login"
           className={`text-[16px] px-4 py-2 rounded-full font-semibold`}
-      style={{
-        backgroundColor: type === "light" ? "white" : "#5F00BA", // bg-white or bg-primary
-        color: type === "light" ? "#5F00BA" : "white" // text-gray-900 or text-white
-      }}
+          style={{
+            backgroundColor: type === "light" ? "white" : "#5F00BA", // bg-white or bg-primary
+            color: type === "light" ? "#5F00BA" : "white" // text-gray-900 or text-white
+          }}
         >
           Log in
         </Link>
@@ -83,38 +80,49 @@ export function Header(props: HeaderProps) {
         )}
       >
         {/* Close Button inside the menu */}
+        <button onClick={() => {
+          navigate("/");
+          toggleMenu()
+        }}>
+          <img
+            src={logoDark}
+            alt="Rexee Logo"
+            className="h-[40px] w-auto absolute top-8 left-8"
+          />
+        </button>
+
         <button
-          className="absolute top-8 right-8 text-black"
+          className="absolute top-12 right-8 text-gray-dark"
           onClick={toggleMenu}
         >
-          <X size={32} />
+          <X size={24} />
         </button>
 
         <Link
           to={`/`}
-          className="text-[20px] text-black font-semibold mb-6"
-          onClick={toggleMenu} // Close menu on link click
+          className="text-[16px] text-text-dark font-semibold mb-6"
+          onClick={toggleMenu}
         >
           Home
         </Link>
         <Link
           to={`/contact`}
-          className="text-[20px] text-black font-semibold mb-6"
-          onClick={toggleMenu} // Close menu on link click
+          className="text-[16px] text-text-dark font-semibold mb-6"
+          onClick={toggleMenu}
         >
           Contact us
         </Link>
         <Link
           to={`/blog`}
-          className="text-[20px] text-black font-semibold mb-6"
-          onClick={toggleMenu} // Close menu on link click
+          className="text-[16px] text-text-dark font-semibold mb-6"
+          onClick={toggleMenu}
         >
           Blog
         </Link>
         <Link
           to="/login"
-          className="text-[20px] px-6 py-3 rounded-full font-semibold bg-primary text-white"
-          onClick={toggleMenu} // Close menu on link click
+          className="text-[16px] px-6 py-3 rounded-full font-semibold bg-primary text-white"
+          onClick={toggleMenu}
         >
           Log in
         </Link>
