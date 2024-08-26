@@ -11,6 +11,7 @@ import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 import missingCoverImage from "../../src/assets/img/missing-image-rexee.png";
 import flashesYellow from "../../src/assets/svg/flashes-yellow.svg";
 import flashesWhite from "../../src/assets/svg/flashes-white.svg";
+import Loader from "../components/Loader";
 
 type Post = {
     id: number;
@@ -213,31 +214,7 @@ const Blog = () => {
                 </h2>
 
                 {loading ? (
-                    <div className="flex justify-center items-center h-full">
-                        <div className="loader bg-white outline-gray-light p-5 rounded-full flex space-x-3">
-                            <div
-                                className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                                style={{
-                                    animationDuration: "0.5s",
-                                    animationDelay: "0.1s",
-                                }}
-                            ></div>
-                            <div
-                                className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                                style={{
-                                    animationDuration: "0.5s",
-                                    animationDelay: "0.3s",
-                                }}
-                            ></div>
-                            <div
-                                className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                                style={{
-                                    animationDuration: "0.5s",
-                                    animationDelay: "0.6s",
-                                }}
-                            ></div>
-                        </div>
-                    </div>
+                   <Loader />
                 ) : (
                     <ul className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-6">
                         {filteredPosts.map((post) => (

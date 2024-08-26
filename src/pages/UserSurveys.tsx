@@ -6,6 +6,7 @@ import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import Card from "../components/Card";
 import { File } from "react-feather";
+import Loader from "../components/Loader";
 
 const UserSurveys = () => {
   const [surveys, setSurveys] = useState<any[]>([]);
@@ -102,22 +103,7 @@ const UserSurveys = () => {
 
           {/* Show loading state when surveys are being fetched */}
           {loading ? (
-            <div className="flex justify-center items-center h-full">
-              <div className="loader bg-white outline-gray-light p-5 rounded-full flex space-x-3">
-                <div
-                  className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                  style={{ animationDuration: "0.5s", animationDelay: "0.1s" }}
-                ></div>
-                <div
-                  className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                  style={{ animationDuration: "0.5s", animationDelay: "0.3s" }}
-                ></div>
-                <div
-                  className="w-3 h-3 bg-primary rounded-full animate-bounce"
-                  style={{ animationDuration: "0.5s", animationDelay: "0.6s" }}
-                ></div>
-              </div>
-            </div>
+            <Loader />
           ) : isCompleted && completed.length > 0 ? (
             <div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {completed.map((survey, ind) => (
