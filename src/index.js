@@ -25,6 +25,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import ResetPasswordCode from "./pages/ResetPasswordCode"; 
 import ResetPassword from "./pages/ResetPassword"; 
 
+import NotFound from "./pages/NotFound"; 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
@@ -50,6 +52,9 @@ root.render(
       <Route path="/surveys" element={<UserSurveys />} />
       <Route path="/items" element={<UserItems />} />
       <Route path="/vouchers" element={<UserVouchers />} />
+
+      {/* 404 page */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
 );
