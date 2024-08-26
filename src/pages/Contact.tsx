@@ -4,11 +4,18 @@ import Header from "../components/Header";
 import { Mail } from "react-feather";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 import flashYellow from "../../src/assets/svg/flash-yellow.svg";
 
 const FORMSPARK_FORM_ID = "EstwSp1jK";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Contact = () => {
   const [submit, submitting] = useFormspark({
@@ -33,10 +40,21 @@ const Contact = () => {
     setSuccess(false);
   }, []);
 
+  const { ref: headerRef, inView: headerInView } = useInView({ triggerOnce: true });
+  const { ref: formRef, inView: formInView } = useInView({ triggerOnce: true });
+  const { ref: infoRef, inView: infoInView } = useInView({ triggerOnce: true });
+
   return (
     <>
-      <div className="w-screen h-[60vh] bg-primary text-white flex flex-col gap-10 justify-center items-center relative overflow-hidden">
-        <Header type="light"/>
+      <motion.div
+        ref={headerRef}
+        initial="hidden"
+        animate={headerInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+        className="w-screen h-[60vh] bg-primary text-white flex flex-col gap-10 justify-center items-center relative overflow-hidden"
+      >
+        <Header type="light" />
         <img
           src={flashPrimaryDark}
           alt="Flash Purple"
@@ -53,11 +71,18 @@ const Contact = () => {
           Turn market research into a fun game and win amazing rewards along the
           way!
         </p>
-      </div>
+      </motion.div>
 
       <div className="flex gap-4 py-12 max-w-[1224px] mx-auto h-full xs:flex-col sm:flex-row xs:px-6 lg:px-0">
         {/* FORM */}
-        <div className="p-6 bg-light rounded-3xl flex-1">
+        <motion.div
+          ref={formRef}
+          initial="hidden"
+          animate={formInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+          transition={{ duration: 0.6 }}
+          className="p-6 bg-light rounded-3xl flex-1"
+        >
           <h3 className="xs:text-[24px] sm:text-[32px] leading-[42px] font-bold mb-6">
             Send us a message
           </h3>
@@ -102,9 +127,16 @@ const Contact = () => {
             </button>
           </form>
           {success && <p className="mt-4 text-green-500">Message sent!</p>}
-        </div>
+        </motion.div>
 
-        <div className="p-6 bg-light rounded-3xl flex-1 flex flex-col gap-4 items-start">
+        <motion.div
+          ref={infoRef}
+          initial="hidden"
+          animate={infoInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+          transition={{ duration: 0.7 }}
+          className="p-6 bg-light rounded-3xl flex-1 flex flex-col gap-4 items-start"
+        >
           <img
             src={flashYellow}
             alt="Flash Icon Yellow"
@@ -118,7 +150,7 @@ const Contact = () => {
             <Mail color="#8A8AA1" size="18" />
             <p>info@rexee.com</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <Banner />

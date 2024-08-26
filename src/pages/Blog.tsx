@@ -6,6 +6,8 @@ import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Tag from "../components/Tag";
 import { ChevronDown, X } from "react-feather";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import flashPrimaryDark from "../../src/assets/svg/flash-primary-dark.svg";
 import missingCoverImage from "../../src/assets/img/missing-image-rexee.png";
@@ -31,6 +33,11 @@ type Category = {
     name: string;
 };
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+};
+
 const Blog = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
@@ -38,6 +45,10 @@ const Blog = () => {
     const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
     const [showAllCategories, setShowAllCategories] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const { ref: headerRef, inView: headerInView } = useInView({ triggerOnce: true });
+    const { ref: categoriesRef, inView: categoriesInView } = useInView({ triggerOnce: true });
+    const { ref: postsRef, inView: postsInView } = useInView({ triggerOnce: true });
 
     useEffect(() => {
         fetch("https://wwb.ppl.mybluehost.me/wp-json/wp/v2/categories")
@@ -109,7 +120,15 @@ const Blog = () => {
     return (
         <>
             <Header type="dark" isRelative />
-            <div className="h-[60vh] max-w-[1224px] mx-auto rounded-3xl bg-primary text-white flex flex-col gap-10 justify-center items-center relative overflow-hidden xs:mx-6 sm:mx-6 lg:mx-auto">
+
+            <motion.div
+                ref={headerRef}
+                initial="hidden"
+                animate={headerInView ? "visible" : "hidden"}
+                variants={fadeInUp}
+                transition={{ duration: 0.5 }}
+                className="h-[60vh] max-w-[1224px] mx-auto rounded-3xl bg-primary text-white flex flex-col gap-10 justify-center items-center relative overflow-hidden xs:mx-6 sm:mx-6 lg:mx-auto"
+            >
                 <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] xs:max-w-[90%] sm:max-w-[60%] font-bold text-center z-20">
                     Discover a World of <span className="text-secondary-light">Ideas</span>{" "}
                     and <span className="text-secondary-light">Inspiration</span>
@@ -138,10 +157,17 @@ const Blog = () => {
                         left: "0%",
                     }}
                 />
-            </div>
+            </motion.div>
 
-            <div className="py-12 max-w-[1224px] mx-auto h-full pb-10">
-                <div className="relative flex items-center gap-4 px-6">
+            <motion.div
+                ref={categoriesRef}
+                initial="hidden"
+                animate={categoriesInView ? "visible" : "hidden"}
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                className="px-6 pt-10 max-w-[1224px] mx-auto h-full"
+            >
+                <div className="relative flex items-center gap-4">
                     {/* Select Category Dropdown */}
                     <div className="relative" ref={dropdownRef}>
                         <button
@@ -207,14 +233,22 @@ const Blog = () => {
                         </div>
                     )}
                 </div>
+            </motion.div>
 
-
+            <motion.div
+                ref={postsRef}
+                initial="hidden"
+                animate={postsInView ? "visible" : "hidden"}
+                variants={fadeInUp}
+                transition={{ duration: 0.7 }}
+                className="pt-4 max-w-[1224px] mx-auto h-full pb-10"
+            >
                 <h2 className="text-2xl text-text-dark font-bold mt-6 mb-6 px-6">
                     {selectedCategories.length ? "Filtered Posts" : "All Posts"}
                 </h2>
 
                 {loading ? (
-                   <Loader />
+                    <Loader />
                 ) : (
                     <ul className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-6">
                         {filteredPosts.map((post) => (
@@ -277,7 +311,7 @@ const Blog = () => {
                         ))}
                     </ul>
                 )}
-            </div>
+            </motion.div>
 
             <Banner />
             <Footer />

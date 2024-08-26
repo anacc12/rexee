@@ -18,6 +18,16 @@ import Emily from "./team/emily.webp";
 import Marko from "./team/marko.webp";
 import Manuel from "./team/manuel.webp";
 
+// TEAM HOVER
+import MarioHover from "./team/mario-hover.webp";
+import AnnaHover from "./team/anna-hover.webp";
+import RiccardoHover from "./team/riccardo-hover.webp";
+import EnnioHover from "./team/ennio-hover.webp";
+import AlessandroHover from "./team/alessandro-hover.webp";
+import EmilyHover from "./team/emily-hover.webp";
+import MarkoHover from "./team/marko-hover.webp";
+import ManuelHover from "./team/manuel-hover.webp";
+
 const Image = {
   SelectCountry,
   VoiceQuestion,
@@ -35,6 +45,14 @@ const Image = {
   Emily,
   Marko,
   Manuel,
+  MarioHover,
+  AnnaHover,
+  RiccardoHover,
+  EnnioHover,
+  AlessandroHover,
+  EmilyHover,
+  MarkoHover,
+  ManuelHover,
 };
 
 export default Image;

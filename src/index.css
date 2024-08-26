@@ -31,3 +31,23 @@
       @apply font-easyGrotesk;
     }
   }
+
+  .team-avatar img {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .team-avatar img.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .team-avatar:hover img.hover-image {
+    opacity: 1;
+  }
+  
+  .team-avatar:hover img.default-image {
+    opacity: 0;
+  }
