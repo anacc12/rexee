@@ -3,9 +3,11 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import logo from "../../src/assets/svg/logo-white.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { authService } from "../auth";
+import { toast } from "react-toastify";
 
 const ResetPasswordCode: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
   const inputs = useRef<Array<HTMLInputElement | null>>([]);
 
@@ -15,7 +17,6 @@ const ResetPasswordCode: React.FC = () => {
       newCode[index] = value;
       setCode(newCode);
 
-      // Move to the next input
       if (index < inputs.current.length - 1 && value) {
         inputs.current[index + 1]?.focus();
       }
@@ -24,26 +25,29 @@ const ResetPasswordCode: React.FC = () => {
 
   const handleKeyDown = (index: number, event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Backspace" && !code[index] && index > 0) {
-      // Move to the previous input on backspace if current input is empty
       inputs.current[index - 1]?.focus();
     }
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const compiledCode = code.join("");
-    console.log(compiledCode);
-    navigate("/reset-password");
-
+  const handleConfirmCode = async (event: React.FormEvent) => {
+    event.preventDefault();  // Prevent the default form submission behavior
+    
+    try {
+      const codeString = code.join(""); // Combine the 6 input fields into one string
+      await authService.verifyResetPasswordCode("cacijaana1@gmail.com", codeString);
+      toast.success("Code confirmed! Proceed to reset your password.");
+      navigate("/reset-password");
+    } catch (error) {
+      toast.error("Invalid code. Please try again.");
+    }
   };
 
   return (
     <div className="w-screen h-screen bg-extra-light">
       <div className="w-screen h-[200px] pb-8 bg-primary text-white flex flex-col gap-10 justify-center items-center z-10">
-      <Link to={`/`}>
-        <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
+        <Link to={`/`}>
+          <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
         </Link>
-        
       </div>
       <Card
         rounded="xxl"
@@ -56,7 +60,7 @@ const ResetPasswordCode: React.FC = () => {
           Please enter the 6-digit code sent to your email.
         </p>
 
-        <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
+        <form onSubmit={handleConfirmCode} className="w-full flex flex-col items-center">
           <div className="flex justify-between gap-2 w-full my-6">
             {code.map((digit, index) => (
               <input

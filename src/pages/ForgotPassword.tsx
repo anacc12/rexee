@@ -17,18 +17,12 @@ type ForgotPasswordForm = {
 };
 
 const ForgotPassword = () => {
-  const form = useForm<ForgotPasswordForm>();
-
-
-  const handleButtonClick = () => {
-    navigate("/reset-password-code");
-  };
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ForgotPasswordForm>();
+  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -36,21 +30,19 @@ const ForgotPassword = () => {
 
   const onSubmit: SubmitHandler<ForgotPasswordForm> = async (data) => {
     try {
-      const response = await authService.forgotPassword(data.email);
-
-      if (response.succeeded) {
-        setShowConfirmation(true);
+        await authService.sendResetPasswordEmail(data.email);
+        toast.success("Reset code sent to your email!");
         navigate("/reset-password-code");
-
-      }
-    } catch (err) {}
+    } catch (error) {
+        toast.error("Failed to send reset code. Please try again.");
+    }
   };
 
   return (
     <div className="w-screen h-screen bg-extra-light">
       <div className="w-screen h-[200px] pb-8 bg-primary text-white flex flex-col gap-10 justify-center items-center z-10">
-      <Link to={`/`}>
-        <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
+        <Link to={`/`}>
+          <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
         </Link>
       </div>
       <Card
@@ -70,10 +62,7 @@ const ForgotPassword = () => {
           <input
             type="text"
             id="email"
-            // name="email"
             placeholder="Enter your email"
-            // value={email}
-            // onChange={(e) => setemail(e.target.value)}
             {...register("email", { required: true })}
             required
             className={`w-full text-[14px] p-3 mb-4 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
@@ -85,7 +74,6 @@ const ForgotPassword = () => {
             <button
               type="submit"
               className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
-              onClick={handleButtonClick}
             >
               Get a link
             </button>

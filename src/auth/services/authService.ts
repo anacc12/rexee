@@ -29,6 +29,13 @@ type AuthResponse = {
    },
  });
 
+ const updatePasswordRoute = axios.create({
+  baseURL: "http://127.0.0.1:8000/api/v1/prod/auth",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 class AuthService extends ServiceBase {
   getLoggerName(): string {
     return "AuthService";
@@ -125,14 +132,6 @@ class AuthService extends ServiceBase {
     return res.data;
   }
 
-  async resetPassword(data: Password): Promise<IdentityResponse> {
-    const res = await this.http.put<IdentityResponse>(
-      "/auth/password-reset",
-      data
-    );
-    return res.data;
-  }
-
   updateUser = async (data: UpdateForm) => {
     const token = Cookies.get('token');
     const parsedToken = JSON.parse(token || '{}');
@@ -143,6 +142,18 @@ class AuthService extends ServiceBase {
     });
     return response.data;
   };
+
+  sendResetPasswordEmail = async (email: string) => {
+    return await this.http.post('/auth/reset-password/email/', { email });
+}
+
+  verifyResetPasswordCode = async (email: string, code: string) => {
+    return await this.http.post('/auth/reset-password/code/', { email, code });
+}
+
+  resetPassword = async (email: string, password: string) => {
+    return await this.http.post('/auth/reset-password/', { email, password });
+}
 
 
   logout = async () => {

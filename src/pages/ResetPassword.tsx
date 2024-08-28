@@ -1,42 +1,46 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
-import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { AxiosError } from "axios";
-
-import logo from "../../src/assets/svg/logo-white.svg";
 import authService from "../auth/services/authService";
-import { authStore } from "../auth";
-import { jwtDecode } from "jwt-decode";
+import logo from "../../src/assets/svg/logo-white.svg";
 import { Link } from "react-router-dom";
 
-type ResetPasswordForm = {
-    password: string;
-    confirmPassword: string;
-};
-
 const ResetPassword = () => {
-    const form = useForm<ResetPasswordForm>();
-
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<ResetPasswordForm>();
-
-    ;
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
 
+    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(event.target.value);
+    };
+
+    const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setConfirmPassword(event.target.value);
+    };
+
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match");
+            return;
+        }
+
+        try {
+            await authService.resetPassword("cacijaana1@gmail.com", password);
+            toast.success("Password reset successfully!");
+            navigate("/login");
+        } catch (error) {
+            toast.error("Failed to reset password. Please try again.");
+        }
+    };
 
     return (
         <div className="w-screen h-screen bg-extra-light">
             <div className="w-screen h-[200px] pb-8 bg-primary text-white flex flex-col gap-10 justify-center items-center z-10">
-            <Link to={`/`}>
-                <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
+                <Link to={`/`}>
+                    <img src={logo} alt="Rexee Logo" className="h-[50px] w-auto" />
                 </Link>
             </div>
             <Card
@@ -51,37 +55,31 @@ const ResetPassword = () => {
                 </p>
 
                 <hr className="border-t-1 border-gray-light w-full my-6" />
-                <form className="w-full">
-
+                <form onSubmit={handleSubmit} className="w-full">
                     <p className="text-[12px] font-semibold text-dark mb-2">Password *</p>
                     <input
                         type="password"
-                        id="password"
-                        placeholder="Enter your password"
-                        {...register("password", { required: true })}
+                        value={password}
+                        onChange={handlePasswordChange}
+                        placeholder="Enter your new password"
                         required
-                        className={`w-full text-[14px] mb-8 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${password ? "bg-extra-light border-primary" : "bg-white"
-                            }`}
+                        className={`w-full text-[14px] mb-8 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${password ? "bg-extra-light border-primary" : "bg-white"}`}
                     />
-
                     <p className="text-[12px] font-semibold text-dark mb-2">Confirm Password *</p>
                     <input
                         type="password"
-                        id="forgot-password"
-                        placeholder="Confirm password"
-                        {...register("confirmPassword", { required: true })}
+                        value={confirmPassword}
+                        onChange={handleConfirmPasswordChange}
+                        placeholder="Confirm your new password"
                         required
-                        className={`w-full text-[14px] mb-8 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${confirmPassword ? "bg-extra-light border-primary" : "bg-white"
-                            }`}
+                        className={`w-full text-[14px] mb-8 p-3 border border-gray-light rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${confirmPassword ? "bg-extra-light border-primary" : "bg-white"}`}
                     />
-
-
                     <div className="flex flex-col gap-4 items-center">
                         <button
                             type="submit"
                             className="w-full p-3 bg-primary text-white rounded-full hover:bg-primary-dark transition"
                         >
-                            Change password
+                            Change Password
                         </button>
                     </div>
                 </form>
