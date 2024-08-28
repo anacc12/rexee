@@ -432,11 +432,11 @@ const Homepage = () => {
                         className="h-[52px] w-auto"
                       />
                       <h2 className="xs:text-[36px] xs:leading-[42px] md:text-[46px] leading-[52px] font-bold text-gray-900">
-                        Score awesome rewards with Rexee
+                        Unlock awesome items with Rexee
                       </h2>
                     </div>
                     <p className="text-gray-700">
-                      Earn Amazon vouchers and 3D models by participating in
+                      Earn items and 3D models by participating in
                       surveys, turning your insights into valuable rewards.
                     </p>
                   </div>
@@ -444,13 +444,13 @@ const Homepage = () => {
                   <div className="flex flex-col gap-2">
                     <Point
                       icon={<Check size={12} color="#fff" />}
-                      text={"Get paid for answering surveys"}
+                      text={"Collect your Rexee points"}
                       style="dark"
                       size="sm"
                     />
                     <Point
                       icon={<Check size={12} color="#fff" />}
-                      text={"Cash out your Rexee points"}
+                      text={"Get the most amazing items for in-game play"}
                       style="dark"
                       size="sm"
                     />
