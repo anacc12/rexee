@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import authService from "../auth/services/authService";
 import logo from "../../src/assets/svg/logo-white.svg";
@@ -11,6 +11,9 @@ const ResetPassword = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
+    const email = location.state?.email;
+    
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
@@ -28,7 +31,7 @@ const ResetPassword = () => {
         }
 
         try {
-            await authService.resetPassword("cacijaana1@gmail.com", password);
+            await authService.resetPassword(email, password);
             toast.success("Password reset successfully!");
             navigate("/login");
         } catch (error) {

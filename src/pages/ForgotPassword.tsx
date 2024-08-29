@@ -32,7 +32,7 @@ const ForgotPassword = () => {
     try {
         await authService.sendResetPasswordEmail(data.email);
         toast.success("Reset code sent to your email!");
-        navigate("/reset-password-code");
+        navigate("/reset-password-code", { state: { email: data.email } });
     } catch (error) {
         toast.error("Failed to send reset code. Please try again.");
     }

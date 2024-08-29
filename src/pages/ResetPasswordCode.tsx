@@ -5,11 +5,15 @@ import logo from "../../src/assets/svg/logo-white.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../auth";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 const ResetPasswordCode: React.FC = () => {
   const navigate = useNavigate();
   const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
   const inputs = useRef<Array<HTMLInputElement | null>>([]);
+  const location = useLocation();
+
+  const email = location.state?.email;
 
   const handleChange = (index: number, value: string) => {
     if (value.match(/^[0-9]$/)) {
@@ -34,9 +38,9 @@ const ResetPasswordCode: React.FC = () => {
     
     try {
       const codeString = code.join(""); // Combine the 6 input fields into one string
-      await authService.verifyResetPasswordCode("cacijaana1@gmail.com", codeString);
+      await authService.verifyResetPasswordCode(email, codeString);
       toast.success("Code confirmed! Proceed to reset your password.");
-      navigate("/reset-password");
+      navigate("/reset-password", { state: { email } });
     } catch (error) {
       toast.error("Invalid code. Please try again.");
     }
