@@ -7,6 +7,7 @@ import Voucher from "./voucher.png";
 import LoginInputs from "./login-inputs.png";
 import Dashboard from "./dashboard.png";
 import Leaderboard from "./leaderboard.png";
+import ItemUnlocked from "./item-unlocked.png";
 
 // TEAM
 import Mario from "./team/mario.webp";
@@ -37,6 +38,7 @@ const Image = {
   LoginInputs,
   Dashboard,
   Leaderboard,
+  ItemUnlocked,
   Mario,
   Anna,
   Riccardo,

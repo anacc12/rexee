@@ -242,7 +242,7 @@ const Homepage = () => {
 
                       <div className="col-span-1 row-span-1 h-full">
                         <LazyImage
-                          src={Image.Voucher}
+                          src={Image.ItemUnlocked}
                           alt="Voucher showcase"
                           className="w-full h-full rounded-xl object-cover"
                         />
@@ -465,7 +465,7 @@ const Homepage = () => {
 
                 <div className="bg-secondary-darker flex-1 w-full h-[532px] rounded-3xl p-[44px]">
                   <LazyImage
-                    src={Image.Voucher}
+                    src={Image.ItemUnlocked}
                     alt="Voucher showcase"
                     className="w-full h-full rounded-2xl object-cover"
                   />
