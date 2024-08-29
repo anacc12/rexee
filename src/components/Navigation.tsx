@@ -69,7 +69,7 @@ export function Navigation(props: NavigationProps) {
             </Link>
 
 
-            <Link
+            {/* <Link
               className={`text-[13px] flex gap-2 items-center py-3 px-4 w-full rounded-full  ${active === "vouchers"
                   ? "bg-primary text-white font-semibold before:absolute before:shadow-[1px_0px_13px_0px_#d6bcfa] before:bg-primary before:left-0 before:h-[24px] before:w-[4px] before:rounded-full"
                   : ""
@@ -77,7 +77,7 @@ export function Navigation(props: NavigationProps) {
               to={"/vouchers"}
             >
               Vouchers
-            </Link>
+            </Link> */}
 
 
 
@@ -152,7 +152,7 @@ export function Navigation(props: NavigationProps) {
             >
               Items
             </Link>
-            <Link
+            {/* <Link
               className={`text-[16px] w-full text-center py-3 px-4 rounded-full ${active === "vouchers"
                   ? "bg-primary text-white font-semibold"
                   : "text-dark"
@@ -161,7 +161,7 @@ export function Navigation(props: NavigationProps) {
               onClick={handleMenuToggle}
             >
               Vouchers
-            </Link>
+            </Link> */}
 
             <Link
               className={`text-[16px] w-full text-center py-3 px-4 rounded-full ${active === "profile"
