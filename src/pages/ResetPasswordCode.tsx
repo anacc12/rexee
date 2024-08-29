@@ -53,7 +53,7 @@ const ResetPasswordCode: React.FC = () => {
         rounded="xxl"
         cardStyle="outline"
         cardSize="base"
-        className="max-w-[500px] -mt-[45px] mx-auto z-20 flex flex-col items-center"
+        className="xs:max-w-[380px] sm:max-w-[400px] md:max-w-[500px] -mt-[45px] mx-auto z-20 flex flex-col items-center"
       >
         <h4 className="text-[24px] font-bold mb-3">Enter Verification Code</h4>
         <p className="text-[15px] !text-gray-dark text-center">
@@ -71,7 +71,7 @@ const ResetPasswordCode: React.FC = () => {
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 ref={(el) => (inputs.current[index] = el)}
-                className="w-14 h-14 text-center text-[24px] border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-10 h-10 md:w-14 md:h-14 text-center text-[24px] border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             ))}
           </div>

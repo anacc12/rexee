@@ -47,7 +47,7 @@ const ResetPassword = () => {
                 rounded="xxl"
                 cardStyle="outline"
                 cardSize="base"
-                className="max-w-[500px] -mt-[45px] mx-auto z-20 flex flex-col items-center"
+                className="xs:max-w-[380px] sm:max-w-[400px] md:max-w-[500px] -mt-[45px] mx-auto z-20 flex flex-col items-center"
             >
                 <h4 className="text-[24px] font-bold mb-3">Reset your password</h4>
                 <p className="text-[15px] !text-gray-dark text-center">
