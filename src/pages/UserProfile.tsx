@@ -6,29 +6,22 @@ import {
   UpdateForm,
 } from "../auth";
 import { Link } from "react-router-dom";
-// import { IAuthenticatedUser } from '../auth/interfaces/IAuthenticatedUser';
-
-import logoDark from "../../src/assets/svg/logo-black.svg";
 import Header from "../components/Header";
-import { ArrowLeft } from "react-feather";
 import Navigation from "../components/Navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import Card from "../components/Card";
 
 const UserProfile = () => {
-  const form = useForm<UpdateForm>();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm<UpdateForm>();
 
   const [user, setUser] = useState<IAuthenticatedUser | null>(null);
-
   const [personal, setIsPersonal] = useState(true);
 
   useEffect(() => {
@@ -50,26 +43,34 @@ const UserProfile = () => {
     fetchUser();
   }, [reset]);
 
-  const handlePersonalTab: any = () => {
+  const handlePersonalTab = () => {
     setIsPersonal(true);
   };
 
-  const handleLoginTab: any = () => {
+  const handleLoginTab = () => {
     setIsPersonal(false);
   };
 
   const onSubmit: SubmitHandler<UpdateForm> = async (data) => {
     try {
-      const updatedUser = await authStore.updateUser(data);
+      const password = watch('password'); 
+      const email = data.email;
+
+      if (password) {
+        await authService.resetPassword(email, password);
+        toast.success("Password updated successfully.");
+      }
+
+      const { password: _, ...updateData } = data; 
+      const updatedUser = await authService.updateUser(updateData);
 
       if (updatedUser) {
         setUser(updatedUser);
-        toast.success("Profile updated successfully");
+        toast.success("Profile updated successfully.");
       } else {
-        toast.error("Oops, an error occurred while updating your profile.");
+        toast.error("An error occurred while updating your profile.");
       }
-    } catch (err: any) {
-     
+    } catch (err) {
       toast.error("Sorry, there was an error.");
     }
   };
@@ -84,7 +85,6 @@ const UserProfile = () => {
 
       <div className="flex flex-col flex-1 gap-4 md:ml-[240px] p-6">
         <h4 className="text-[24px] font-bold">Profile Settings</h4>
-        {/* <hr className="border-t-1 border-gray-light w-full" /> */}
 
         <Card
           rounded="xxl"

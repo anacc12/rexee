@@ -23,18 +23,11 @@ type AuthResponse = {
 };
 
  const updateUserBase = axios.create({
-   baseURL: "https://93.63.175.219/api/v1/prod",
+   baseURL: "http://93.63.175.219:8000/api/v1/prod/auth/user/data",
    headers: {
      "Content-Type": "application/json",
    },
  });
-
- const updatePasswordRoute = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/v1/prod/auth",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
 
 class AuthService extends ServiceBase {
   getLoggerName(): string {
@@ -50,12 +43,6 @@ class AuthService extends ServiceBase {
   async validEmail(email: string): Promise<TResponse> {
     return await this.http.get(`/auth/email-validation?email=${email}`);
   }
-
-  // async getUser(): Promise<IAuthenticatedUser> {
-  //   const res = await this.http.get(`/user/me`);
-
-  //   return res.data;
-  // }
 
   async getUser(): Promise<IAuthenticatedUser> {
     const token = Cookies.get("token");
@@ -135,7 +122,7 @@ class AuthService extends ServiceBase {
   updateUser = async (data: UpdateForm) => {
     const token = Cookies.get('token');
     const parsedToken = JSON.parse(token || '{}');
-    const response = await updateUserBase.post('/auth/user/data/', data, {
+    const response = await updateUserBase.patch('/patch/', data, {
       headers: {
         Authorization: `Bearer ${parsedToken.token}`,
       },
