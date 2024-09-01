@@ -10,7 +10,7 @@ export function EmptyState(props: EmptyStateProps) {
             <div className="mt-10 flex flex-col items-center justify-center">
                 <svg
                     className="mx-auto mb-4"
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="https://www.w3.org/2000/svg"
                     width="154"
                     height="161"
                     viewBox="0 0 154 161"
