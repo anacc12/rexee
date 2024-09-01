@@ -167,8 +167,7 @@ const UserDashboard = () => {
       const userData = await authStore.getUser();
       setUser(userData);
 
-      const surveys = await authStore.getUserSurveys(true); // Fetch completed surveys
-      const items = await authStore.getUserUsedItems(); // Fetch used items
+      const surveys = await authStore.getUserSurveys(true) || []; // Ensure surveys is an array
       setCompletedSurveys(surveys.slice(0, 3)); // Limiting to 3 items for dashboard display
 
       setLoading(false);
@@ -176,7 +175,7 @@ const UserDashboard = () => {
 
     const fetchUsedItems = async () => {
       try {
-        const usedItems = await authStore.getUserUsedItems();
+        const usedItems = await authStore.getUserUsedItems() || [];
         if (usedItems) {
           const usedData = items.filter((item) => usedItems.includes(item.id));
           setUsedItems(usedData.slice(0, 3));

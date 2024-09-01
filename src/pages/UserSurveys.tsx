@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import Card from "../components/Card";
 import { File } from "react-feather";
 import Loader from "../components/Loader";
+import EmptyState from "../components/EmptyState";
 
 const UserSurveys = () => {
   const [surveys, setSurveys] = useState<any[]>([]);
@@ -172,11 +173,7 @@ const UserSurveys = () => {
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center w-full h-64 bg-gray-50 rounded-lg">
-              <File className="w-12 h-12 text-gray-400 mb-4" />
-              <p className="text-gray-500 text-lg font-semibold">No surveys available</p>
-              <p className="text-gray-400 text-sm">Please check back later for new surveys.</p>
-            </div>
+            <EmptyState title="No Surveys Available" message="Please check later for new surveys." />
           )}
         </Card>
       </div>
