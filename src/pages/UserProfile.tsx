@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {
   authService,
-  authStore,
   IAuthenticatedUser,
   UpdateForm,
 } from "../auth";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 import Card from "../components/Card";
+import Navigation from "../components/Navigation";
 
 const UserProfile = () => {
   const {
@@ -24,19 +21,26 @@ const UserProfile = () => {
   const [user, setUser] = useState<IAuthenticatedUser | null>(null);
   const [personal, setIsPersonal] = useState(true);
 
+  // Fetch user data when the component mounts
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await authStore.getUser();
-      setUser(userData);
-
-      if (userData) {
-        reset({
-          first_name: userData.first_name,
-          last_name: userData.last_name,
-          email: userData.email,
-          gender: userData.gender,
-          country: userData.country,
-        });
+      try {
+        const userData = await authService.getUser();
+        console.log("Fetched User Data:", userData);
+        setUser(userData);
+  
+        if (userData) {
+          reset({
+            first_name: userData.first_name,
+            last_name: userData.last_name,
+            email: userData.email,
+            gender: userData.gender,
+            country: userData.country,
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+        toast.error("Failed to load user data.");
       }
     };
 
@@ -51,16 +55,19 @@ const UserProfile = () => {
     setIsPersonal(false);
   };
 
+  // Handle form submission
   const onSubmit: SubmitHandler<UpdateForm> = async (data) => {
     try {
       const password = watch('password'); 
       const email = data.email;
 
       if (password) {
+        // Update password if it's changed
         await authService.resetPassword(email, password);
         toast.success("Password updated successfully.");
       }
 
+      // Update the user data
       const { password: _, ...updateData } = data; 
       const updatedUser = await authService.updateUser(updateData);
 

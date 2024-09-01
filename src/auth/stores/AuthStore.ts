@@ -71,8 +71,6 @@ class AuthStore {
     return user ? JSON.parse(user) : null;
   }
 
-
-
   async dispatchTokenEvent() {
     this.isDispatched = true;
 
@@ -80,7 +78,6 @@ class AuthStore {
 
     setTimeout(() => (this.isDispatched = false), 1000);
   }
-
 
   async logout() {
     try {
