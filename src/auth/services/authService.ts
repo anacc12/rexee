@@ -23,7 +23,7 @@ type AuthResponse = {
 };
 
 const updateUserBase = axios.create({
-  baseURL: "http://93.63.175.219:8000/api/v1/prod/auth/user/data",
+  baseURL: "https://93.63.175.219:8000/api/v1/prod/auth/user/data",
   headers: {
     "Content-Type": "application/json",
   },
