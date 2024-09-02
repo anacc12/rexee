@@ -9,7 +9,7 @@ type ServiceBaseInitialOptions = {
 export class ServiceBase {
     // Your service base implementation
     protected http = axios.create({
-      baseURL: 'http://93.63.175.216:8000/api/v1/prod',
+      baseURL: process.env.REACT_APP_PROXY_BASE_URL,
       headers: {
         'Content-Type': 'application/json',
       },
