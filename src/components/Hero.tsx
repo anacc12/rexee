@@ -44,7 +44,7 @@ const Hero = () => {
             />
           <div className="flex items-center justify-center align-center flex-col gap-12 xs:max-w-[90%] sm:max-w-[70%]  z-20">
             <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold font-EasyGrotesk ">
-              Discover, share and win with <span className="text-secondary-light">Rexee's</span> fun surveys
+              Discover, share and win with <span className="text-secondary">Rexee's</span> fun surveys
             </h1>
             <p className="text-[20px] xs:text-[16px] text-white">
               Step into the world of immersive VR and get rewarded for your

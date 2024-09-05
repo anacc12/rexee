@@ -53,10 +53,10 @@ export function Header(props: HeaderProps) {
           }`}>
           Contact us
         </Link>
-        <Link to={`/blog`} className={`text-[16px] font-semibold ${type == "light" ? "text-white" : "text-gray-900"
+        {/* <Link to={`/blog`} className={`text-[16px] font-semibold ${type == "light" ? "text-white" : "text-gray-900"
           }`}>
           Blog
-        </Link>
+        </Link> */}
         <Link
           to="/login"
           className={`text-[16px] px-4 py-2 rounded-full font-semibold`}
@@ -112,13 +112,13 @@ export function Header(props: HeaderProps) {
         >
           Contact us
         </Link>
-        <Link
+        {/* <Link
           to={`/blog`}
           className="text-[16px] text-text-dark font-semibold mb-6"
           onClick={toggleMenu}
         >
           Blog
-        </Link>
+        </Link> */}
         <Link
           to="/login"
           className="text-[16px] px-6 py-3 rounded-full font-semibold bg-primary text-white"
