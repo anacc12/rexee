@@ -108,11 +108,11 @@ const Homepage = () => {
                 <img
                   src={flashYellow}
                   alt="Flash Icon Yellow"
-                  className="xs:h-[60px] md:h-[56px] w-auto"
+                  className="xs:h-[60px] sm:h-[60px] md:h-[56px] w-auto"
                 />
               </div>
 
-              <div className="flex gap-7 xs:flex-col med:flex-row">
+              <div className="flex gap-7 xs:flex-col sm:flex-col med:flex-row">
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
@@ -229,7 +229,7 @@ const Homepage = () => {
                   </h2>
                 </div>
 
-                <div className="flex gap-6 xs:flex-col md:flex-row">
+                <div className="flex gap-6 xs:flex-col sm:flex-col md:flex-row">
                   <div className="flex justify-center items-center p-6 w-full h-[364px] bg-primary-light rounded-3xl">
                     <div className="grid grid-cols-2 grid-rows-2 gap-5 w-full h-full">
                       <div className="col-span-1 row-span-2 h-full">
@@ -266,11 +266,11 @@ const Homepage = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-7 xs:flex-col md:flex-row">
+                <div className="flex gap-7 xs:flex-col sm:flex-col md:flex-row">
                   <Card
                     cardSize="none"
                     cardStyle="ghost"
-                    className="flex flex-col xs:gap-2 md:gap-4 items-start"
+                    className="flex flex-col xs:gap-2 sm:gap-2 md:gap-4 items-start"
                     children={
                       <>
                         <h4 className="text-[24px] font-semibold">
@@ -286,7 +286,7 @@ const Homepage = () => {
                   <Card
                     cardSize="none"
                     cardStyle="ghost"
-                    className="flex flex-col xs:gap-2 md:gap-4 items-start"
+                    className="flex flex-col xs:gap-2 sm:gap-2 md:gap-4 items-start"
                     children={
                       <>
                         <h4 className="text-[24px] font-semibold">
@@ -302,7 +302,7 @@ const Homepage = () => {
                   <Card
                     cardSize="none"
                     cardStyle="ghost"
-                    className="flex flex-col xs:gap-2 md:gap-4 items-start"
+                    className="flex flex-col xs:gap-2 sm:gap-2 md:gap-4 items-start"
                     children={
                       <>
                         <h4 className="text-[24px] font-semibold">
@@ -337,7 +337,7 @@ const Homepage = () => {
           width="w-full"
           className="flex mt-4 max-w-[1400px] mx-auto"
           children={
-            <div className="w-full max-w-[1224px] flex xs:gap-10 md:gap-[100px] mx-auto items-center xs:flex-col md:flex-row">
+            <div className="w-full max-w-[1224px] flex xs:gap-10 sm:gap-10 md:gap-[100px] mx-auto items-center xs:flex-col sm:flex-col md:flex-row">
               <div className="bg-gray flex-1 w-full h-[532px] rounded-3xl p-[44px]">
                 <LazyImage
                   src={Image.Leaderboard}
@@ -422,7 +422,7 @@ const Homepage = () => {
                   left: "-3%",
                 }}
               />
-              <div className="w-full max-w-[1224px] flex xs:gap-10 md:gap-[130px] mx-auto items-center z-20 xs:flex-col-reverse md:flex-row">
+              <div className="w-full max-w-[1224px] flex xs:gap-10 sm:gap-10 md:gap-[130px] mx-auto items-center z-20 xs:flex-col-reverse sm:flex-col-reverse md:flex-row">
                 <div className="flex flex-col gap-10 flex-1">
                   <div className="flex flex-col gap-6">
                     <div className="flex flex-col gap-4 items-start">
@@ -431,7 +431,7 @@ const Homepage = () => {
                         alt="Gift Icon"
                         className="h-[52px] w-auto"
                       />
-                      <h2 className="xs:text-[36px] xs:leading-[42px] md:text-[46px] leading-[52px] font-bold text-gray-900">
+                      <h2 className="xs:text-[36px] xs:leading-[42px] sm:text-[36px] sm:leading-[42px] md:text-[46px] leading-[52px] font-bold text-gray-900">
                         Unlock awesome items with Rexee
                       </h2>
                     </div>

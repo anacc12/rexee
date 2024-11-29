@@ -67,13 +67,13 @@ const Contact = () => {
         <h1 className="xs:text-[2.5rem] xs:leading-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] sm:leading-[4rem] lg:leading-[5rem] font-bold leading-[5rem] z-20">
           Contact us
         </h1>
-        <p className="text-[20px] xs:text-[16px] text-white z-20 w-[40%] text-center">
+        <p className="text-[20px] xs:text-[16px] sm:text-[16px] text-white z-20 w-[40%] text-center">
           Turn market research into a fun game and win amazing rewards along the
           way!
         </p>
       </motion.div>
 
-      <div className="flex gap-4 py-12 max-w-[1224px] mx-auto h-full xs:flex-col sm:flex-row xs:px-6 lg:px-0">
+      <div className="flex gap-4 py-12 max-w-[1224px] mx-auto h-full xs:flex-col sm:flex-row xs:px-6 sm:px-6 lg:px-0">
         {/* FORM */}
         <motion.div
           ref={formRef}

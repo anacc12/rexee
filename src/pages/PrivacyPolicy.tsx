@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med xs:px-6 lg:px-0">
+      <div className="flex flex-col gap-10 py-12 max-w-[860px] mx-auto text-text-med xs:px-6 sm:px-6 lg:px-0">
         {/* INTRO */}
         <p>
           Welcome to Rexee, an application dedicated to market research and

@@ -14,7 +14,7 @@ export function Footer(props: FooterProps) {
   };
 
   return (
-    <div className="w-screen flex flex-col relative gap-10 -mx-4 bg-light pt-10 pb-20 px-6 ">
+    <div className="w-screen flex flex-col relative gap-10 -mx-4 bg-light pt-10 pb-20 px-8">
       <div className="w-full flex flex-1 justify-between max-w-[1224px] mx-auto xs:flex-col xs:items-start xs:gap-6 sm:gap-0">
         <div className="flex flex-col gap-4 ">
           <img src={logo} alt="Logo" className="w-[192px] h-auto" />
