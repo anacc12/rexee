@@ -22,6 +22,7 @@ import UserItems from "./pages/UserItems";
 
 import ForgotPassword from "./pages/ForgotPassword";
 import ScrollToTop from "./components/ScrollToTop"; 
+import CursorFollower from "./components/CursorFollower"; 
 import ResetPasswordCode from "./pages/ResetPasswordCode"; 
 import ResetPassword from "./pages/ResetPassword"; 
 
@@ -32,6 +33,7 @@ root.render(
   <Router>
     <ScrollToTop /> 
     <ToastContainer />
+    <CursorFollower />
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/contact" element={<Contact />} />
