@@ -112,7 +112,7 @@ const Homepage = () => {
                 />
               </div>
 
-              <div className="flex gap-7 xs:flex-col sm:flex-col med:flex-row">
+              <div className="flex gap-7 xs:flex-col sm:flex-row med:flex-row">
                 <Card
                   cardSize="none"
                   cardStyle="ghost"
