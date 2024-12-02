@@ -6,10 +6,32 @@
     <title>404 - Page Not Found</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Additional custom styles for alignment */
+        /* Font Face Definitions */
+        @font-face {
+            font-family: "EasyGrotesk";
+            src: url("/assets/fonts/EasyGrotesk/Easy-Grotesk-Regular.ttf") format("truetype");
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: "EasyGrotesk";
+            src: url("/assets/fonts/EasyGrotesk/Easy-Grotesk-Medium.ttf") format("truetype");
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: "EasyGrotesk";
+            src: url("/assets/fonts/EasyGrotesk/Easy-Grotesk-Bold.ttf") format("truetype");
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: "EasyGrotesk";
+            src: url("/assets/fonts/EasyGrotesk/Easy-Grotesk-ExtraBold.ttf") format("truetype");
+            font-weight: 800;
+        }
+
+        /* Apply the font to the body */
         body {
             margin: 0;
-            font-family: 'EasyGrotesk';
+            font-family: 'EasyGrotesk', sans-serif;
             background-color: #fff;
             color: #333;
         }
