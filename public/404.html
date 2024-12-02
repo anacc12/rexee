@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            color: #333333;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 404 Page Content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .content img {
+            width: 120px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .content h1 {
+            font-size: 72px;
+            font-weight: 800;
+            color: #333333;
+            animation: fadeInUp 0.7s ease-out;
+            animation-delay: 0.1s;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666666;
+            animation: fadeInUp 0.7s ease-out;
+            animation-delay: 0.2s;
+        }
+
+        .content a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #5b0dd6; /* Primary color */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 0.7s ease-out;
+            animation-delay: 0.3s;
+        }
+
+        .content a:hover {
+            background-color: #450ba8; /* Darker primary color */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Rexee</div>
+
+    <div class="content">
+        <!-- Illustration -->
+        <img src="/assets/svg/rexee-face.svg" alt="Page not found">
+
+        <!-- 404 Message -->
+        <h1>404</h1>
+
+        <!-- Friendly Message -->
+        <p>Sorry, looks like the page you're looking for does not exist.</p>
+
+        <!-- Go Back Home Button -->
+        <a href="/">Go Back Home</a>
+    </div>
+</body>
+</html>
