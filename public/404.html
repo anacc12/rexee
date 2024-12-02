@@ -56,10 +56,11 @@
             color: #333;
             font-weight: 500;
             text-decoration: none;
+            border-radius: 100px;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -73,12 +74,12 @@
         <nav class="nav-links">
             <a href="/">Home</a>
             <a href="/contact">Contact us</a>
-            <a href="/login" class="px-4 py-2 bg-purple-700 text-white rounded-lg">Log in</a>
+            <a href="/login" class="px-4 py-2 bg-purple-700 !text-white rounded-lg hover:bg-purple-800">Log in</a>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="flex flex-col items-center justify-center min-h-screen text-center">
+    <main class="flex flex-col items-center justify-center min-h-[80vh] text-center">
         <img
             src="/assets/svg/rexee-face.svg"
             alt="Page not found"
@@ -88,7 +89,7 @@
         <p class="text-lg text-gray-600 mb-6">Sorry, looks like the page you're looking for does not exist.</p>
         <a
             href="/"
-            class="px-6 py-3 bg-purple-700 text-white text-lg rounded-lg hover:bg-purple-800 transition"
+            class="px-6 py-3 bg-purple-700 text-white text-lg rounded-full hover:bg-purple-800 transition"
         >
             Go Back Home
         </a>
