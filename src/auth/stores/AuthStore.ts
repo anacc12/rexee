@@ -92,6 +92,7 @@ class AuthStore {
   async removeUser() {
     Cookies.remove("token");
     Cookies.remove("user");
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 
     const tokenExpiredEvent = new Event("tokenExpired");
     window.dispatchEvent(tokenExpiredEvent);

@@ -23,6 +23,7 @@ import UserItems from "./pages/UserItems";
 import ForgotPassword from "./pages/ForgotPassword";
 import ScrollToTop from "./components/ScrollToTop"; 
 import CursorFollower from "./components/CursorFollower"; 
+import PrivateRoute from "./components/PrivateRoute"; 
 import ResetPasswordCode from "./pages/ResetPasswordCode"; 
 import ResetPassword from "./pages/ResetPassword"; 
 
@@ -44,16 +45,18 @@ root.render(
       {/* <Route path={`/blog/${slug}`} element={<Article />} /> */}
       
       <Route path="/blog/:slug" element={<Article />} />
-      <Route path="/dashboard" element={<UserDashboard />} />
+
+      
+      <Route path="/dashboard" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password-code" element={<ResetPasswordCode />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      <Route path="/profile" element={<UserProfile />} />
-      <Route path="/surveys" element={<UserSurveys />} />
-      <Route path="/items" element={<UserItems />} />
-      <Route path="/vouchers" element={<UserVouchers />} />
+      <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+      <Route path="/surveys" element={<PrivateRoute><UserSurveys /></PrivateRoute>} />
+      <Route path="/items" element={<PrivateRoute><UserItems /></PrivateRoute>} />
+      <Route path="/vouchers" element={<PrivateRoute><UserVouchers /></PrivateRoute>} />
 
       {/* 404 page */}
       <Route path="*" element={<NotFound />} />

@@ -30,6 +30,7 @@ class AuthService extends ServiceBase {
 
   login = async (data: { email: string; password: string }) => {
     const response = await this.http.post("/auth/login/", data);
+    
     return response.data;
   };
 
@@ -176,11 +177,15 @@ class AuthService extends ServiceBase {
       Cookies.remove('token');
       Cookies.remove('refreshToken');
       Cookies.remove('user');
+
+      document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+  
     } catch (error) {
       const err = error as Error; // Assert error as Error type
       console.error("Logout failed:", err.message);
     }
   };
+
 }
 
 export default new AuthService();
