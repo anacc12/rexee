@@ -12,11 +12,15 @@ import EmptyState from "../components/EmptyState";
 const UserSurveys = () => {
   const [surveys, setSurveys] = useState<any[]>([]);
   const [completed, setCompleted] = useState<any[]>([]);
-
-  // Add loading state
   const [loading, setLoading] = useState(true);
-
   const [isCompleted, setIsCompleted] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 600);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const fetchSurveys = async () => {
@@ -88,7 +92,7 @@ const UserSurveys = () => {
                   }`}
                 onClick={() => setIsCompleted(false)}
               >
-                All surveys
+                All{!isMobile && " Surveys"}
               </a>
             </li>
             <li className="flex-auto text-center">
@@ -97,7 +101,7 @@ const UserSurveys = () => {
                   }`}
                 onClick={() => setIsCompleted(true)}
               >
-                Completed surveys
+                Completed{!isMobile && " Surveys"}
               </a>
             </li>
           </ul>

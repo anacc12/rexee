@@ -14,6 +14,13 @@ const UserItems = () => {
   const [used, setUsed] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState("all");
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 600);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const items = [
     {
@@ -252,38 +259,38 @@ const UserItems = () => {
           >
             <li className="flex-auto text-center">
               <a
-                className={`flex items-center justify-center w-full px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
+                className={`flex items-center justify-center w-full px-4 lg:px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
                   activeTab === "all"
                     ? "bg-white font-semibold"
                     : "font-medium"
                 }`}
                 onClick={() => setActiveTab("all")}
               >
-                All Items
+                All{!isMobile && " Items"}
               </a>
             </li>
             <li className="flex-auto text-center">
               <a
-                className={`flex items-center justify-center w-full px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
+                className={`flex items-center justify-center w-full px-4 lg:px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
                   activeTab === "used"
                     ? "bg-white font-semibold"
                     : "font-medium"
                 }`}
                 onClick={() => setActiveTab("used")}
               >
-                Used Items
+                Used{!isMobile && " Items"}
               </a>
             </li>
             <li className="flex-auto text-center">
               <a
-                className={`flex items-center justify-center w-full px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
+                className={`flex items-center justify-center w-full px-4 lg:px-12 py-2 text-[14px] mb-0 transition-all ease-in-out border-0 rounded-full cursor-pointer text-slate-700 bg-inherit ${
                   activeTab === "purchased"
                     ? "bg-white font-semibold"
                     : "font-medium"
                 }`}
                 onClick={() => setActiveTab("purchased")}
               >
-                Purchased Items
+                Purchased{!isMobile && " Items"}
               </a>
             </li>
           </ul>
