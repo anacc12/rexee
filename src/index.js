@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Login from "./pages/Login";
-import Blog from "./pages/Blog";
+// import Blog from "./pages/Blog";
 import Article from "./pages/Article";
 import UserDashboard from "./pages/UserDashboard";
 import UserProfile from "./pages/UserProfile";
@@ -22,7 +22,7 @@ import UserItems from "./pages/UserItems";
 
 import ForgotPassword from "./pages/ForgotPassword";
 import ScrollToTop from "./components/ScrollToTop"; 
-import CursorFollower from "./components/CursorFollower"; 
+// import CursorFollower from "./components/CursorFollower"; 
 import PrivateRoute from "./components/PrivateRoute"; 
 import ResetPasswordCode from "./pages/ResetPasswordCode"; 
 import ResetPassword from "./pages/ResetPassword"; 
@@ -34,17 +34,15 @@ root.render(
   <Router>
     <ScrollToTop /> 
     <ToastContainer />
-    <CursorFollower />
+    {/* <CursorFollower /> */}
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/blog" element={<Blog />} />
-      {/* <Route path={`/blog/${slug}`} element={<Article />} /> */}
-      
-      <Route path="/blog/:slug" element={<Article />} />
+      {/* <Route path="/blog" element={<Blog />} /> */}
+      {/* <Route path="/blog/:slug" element={<Article />} /> */}
 
       
       <Route path="/dashboard" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
