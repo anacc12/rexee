@@ -54,16 +54,16 @@ export function Header(props: HeaderProps) {
           Contact us
         </Link>
    
-        <Link
+        {/* <Link
           to="/login"
           className={`text-[16px] px-4 py-2 rounded-full font-semibold`}
           style={{
-            backgroundColor: type === "light" ? "white" : "#5F00BA", // bg-white or bg-primary
-            color: type === "light" ? "#5F00BA" : "white" // text-gray-900 or text-white
+            backgroundColor: type === "light" ? "white" : "#5F00BA", 
+            color: type === "light" ? "#5F00BA" : "white" 
           }}
         >
           Log in
-        </Link>
+        </Link> */}
       </div>
 
       {/* Mobile Menu (Visible when Menu is Open) */}
@@ -110,13 +110,13 @@ export function Header(props: HeaderProps) {
           Contact us
         </Link>
      
-        <Link
+        {/* <Link
           to="/login"
           className="text-[16px] px-6 py-3 rounded-full font-semibold bg-primary text-white"
           onClick={toggleMenu}
         >
           Log in
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
